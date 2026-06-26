@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Delete Account – Toolnic</title>
+        <link rel="icon" href="icon.png">
+
+        <meta name="description"
+            content="Request permanent deletion of your Toolnic account and associated data. We respect your privacy and give you full control." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <style>
+        /* ══════════════════════════════════════════════════════════════
+           RESET & VARIABLES
+           ══════════════════════════════════════════════════════════════ */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --primary-light: #818CF8;
+            --secondary: #06B6D4;
+            --accent: #EC4899;
+            --accent-2: #F59E0B;
+            --success: #10B981;
+            --danger: #EF4444;
+            --danger-dark: #DC2626;
+
+            --bg: #0A0A0F;
+            --bg-2: #0F0F17;
+            --bg-3: #161622;
+            --surface: rgba(255, 255, 255, 0.03);
+            --surface-hover: rgba(255, 255, 255, 0.06);
+            --surface-border: rgba(255, 255, 255, 0.08);
+            --surface-border-hover: rgba(255, 255, 255, 0.15);
+
+            --text: #FFFFFF;
+            --text-muted: #94A3B8;
+            --text-dim: #64748B;
+
+            --radius: 24px;
+            --radius-sm: 14px;
+            --radius-lg: 32px;
+
+            --transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           BACKGROUND EFFECTS
+           ══════════════════════════════════════════════════════════════ */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.35;
+            animation: orb-float 20s ease-in-out infinite;
+        }
+        .orb-1 {
+            width: 500px; height: 500px;
+            top: -150px; left: -100px;
+            background: radial-gradient(circle, #6366F1, transparent 70%);
+        }
+        .orb-2 {
+            width: 500px; height: 500px;
+            bottom: -200px; right: -100px;
+            background: radial-gradient(circle, #EF4444, transparent 70%);
+            animation-delay: -7s;
+        }
+        @keyframes orb-float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, -25px) scale(1.08); }
+            66% { transform: translate(-25px, 35px) scale(0.95); }
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           SCROLLBAR
+           ══════════════════════════════════════════════════════════════ */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--danger));
+            border-radius: 10px;
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           NAVBAR
+           ══════════════════════════════════════════════════════════════ */
+        .navbar {
+            position: fixed;
+            top: 16px;
+            left: 16px;
+            right: 16px;
+            z-index: 1000;
+            padding: 14px 24px;
+            border-radius: 100px;
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid var(--surface-border);
+            transition: all var(--transition);
+        }
+        .navbar.scrolled {
+            background: rgba(10, 10, 15, 0.9);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 22px;
+            letter-spacing: -0.02em;
+        }
+        .logo-mark {
+            width: 42px; height: 42px;
+            border-radius: 12px;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .logo-mark img {
+            width: 100%; height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            display: block;
+        }
+        .logo-mark::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.25), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .logo:hover .logo-mark::before { transform: translateX(100%); }
+
+        .nav-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-muted);
+            padding: 8px 20px;
+            border-radius: 100px;
+            border: 1px solid var(--surface-border);
+            background: var(--surface);
+            transition: all var(--transition-fast);
+        }
+        .nav-back:hover {
+            color: var(--text);
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        /* ══════════════════════════════════════════════════════════════
+           PAGE HERO
+           ══════════════════════════════════════════════════════════════ */
+        .page-hero {
+            padding: 160px 0 80px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .danger-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            border-radius: 100px;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            font-size: 13px;
+            font-weight: 600;
+            color: #FCA5A5;
+            margin-bottom: 28px;
+            letter-spacing: 0.03em;
+        }
+        .danger-badge i { font-size: 14px; color: var(--danger); }
+        .page-hero h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .page-hero h1 .highlight {
+            background: linear-gradient(135deg, var(--danger), #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .page-hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .hero-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+        .meta-pill i { color: var(--primary); }
+
+        /* ══════════════════════════════════════════════════════════════
+           CONTENT AREA
+           ══════════════════════════════════════════════════════════════ */
+        .content-area {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 120px;
+        }
+
+        /* Card */
+        .card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius);
+            padding: 40px;
+            margin-bottom: 24px;
+            transition: border-color var(--transition-fast);
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(99,102,241,0.04), transparent 60%);
+            pointer-events: none;
+        }
+        .card:hover { border-color: var(--surface-border-hover); }
+
+        .card.danger-card::before {
+            background: linear-gradient(135deg, rgba(239,68,68,0.06), transparent 60%);
+        }
+        .card.danger-card { border-color: rgba(239,68,68,0.15); }
+        .card.danger-card:hover { border-color: rgba(239,68,68,0.35); }
+
+        .card.success-card::before {
+            background: linear-gradient(135deg, rgba(16,185,129,0.05), transparent 60%);
+        }
+        .card.success-card { border-color: rgba(16,185,129,0.12); }
+
+        /* Section title */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .section-icon {
+            width: 46px; height: 46px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+        .icon-primary { background: rgba(99,102,241,0.15); color: var(--primary-light); }
+        .icon-danger  { background: rgba(239,68,68,0.15);  color: #FCA5A5; }
+        .icon-success { background: rgba(16,185,129,0.15); color: #6EE7B7; }
+        .icon-warning { background: rgba(245,158,11,0.15); color: #FCD34D; }
+        .icon-cyan    { background: rgba(6,182,212,0.15);  color: #67E8F9; }
+
+        .section-title h2 {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        /* Steps */
+        .steps { display: flex; flex-direction: column; gap: 16px; }
+        .step {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+        .step-num {
+            width: 34px; height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+        }
+        .step-body { padding-top: 4px; }
+        .step-body strong {
+            display: block;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+        .step-body span {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Option label */
+        .option-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 14px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .label-primary { background: rgba(99,102,241,0.15); color: var(--primary-light); border: 1px solid rgba(99,102,241,0.25); }
+        .label-secondary { background: var(--surface); color: var(--text-muted); border: 1px solid var(--surface-border); }
+
+        /* Email block */
+        .email-block {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-sm);
+            padding: 24px 28px;
+            margin: 20px 0;
+        }
+        .email-block .email-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .email-block a {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-light);
+            font-family: 'Space Grotesk', monospace;
+            transition: color var(--transition-fast);
+        }
+        .email-block a:hover { color: var(--accent); }
+
+        .subject-block {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-sm);
+            padding: 16px 22px;
+            margin: 16px 0;
+        }
+        .subject-block .sub-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-dim);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+        .subject-block p {
+            font-family: 'Space Grotesk', monospace;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin: 28px 0;
+            color: var(--text-dim);
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--surface-border);
+        }
+
+        /* Data grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .data-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            color: var(--text-muted);
+            transition: all var(--transition-fast);
+        }
+        .data-item:hover {
+            border-color: var(--surface-border-hover);
+            color: var(--text);
+        }
+        .data-item i { font-size: 18px; flex-shrink: 0; }
+        .data-item.deleted i { color: var(--danger); }
+        .data-item.local i { color: #6EE7B7; }
+
+        /* Include list */
+        .include-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+        .include-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .include-list li i { color: var(--primary-light); margin-top: 2px; flex-shrink: 0; }
+
+        /* Delete methods */
+        .method-list { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+        .method-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: rgba(16,185,129,0.05);
+            border: 1px solid rgba(16,185,129,0.12);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+        .method-item i { color: #6EE7B7; font-size: 18px; flex-shrink: 0; }
+
+        /* Retention highlight */
+        .retention-highlight {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: rgba(245,158,11,0.07);
+            border: 1px solid rgba(245,158,11,0.2);
+            border-radius: var(--radius-sm);
+            padding: 28px;
+            margin-top: 20px;
+        }
+        .retention-highlight .days {
+            font-size: 52px;
+            font-weight: 900;
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, var(--accent-2), #F97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+        .retention-highlight .desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+        .retention-highlight .desc strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+
+        /* Contact grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+        }
+        .contact-item {
+            padding: 24px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius-sm);
+            text-align: center;
+            transition: all var(--transition-fast);
+        }
+        .contact-item:hover {
+            border-color: var(--primary);
+            background: rgba(99,102,241,0.06);
+            transform: translateY(-2px);
+        }
+        .contact-item i { font-size: 28px; color: var(--primary-light); display: block; margin-bottom: 10px; }
+        .contact-item .c-label {
+            font-size: 11px;
+            color: var(--text-dim);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+        .contact-item .c-value { font-size: 14px; color: var(--text); font-weight: 600; }
+        .contact-item a.c-value { color: var(--primary-light); }
+        .contact-item a.c-value:hover { color: var(--accent); }
+
+        /* Warning banner */
+        .warning-banner {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: rgba(239,68,68,0.06);
+            border: 1px solid rgba(239,68,68,0.2);
+            border-radius: var(--radius-sm);
+            padding: 22px 24px;
+            margin-top: 20px;
+        }
+        .warning-banner i { font-size: 24px; color: var(--danger); flex-shrink: 0; margin-top: 2px; }
+        .warning-banner p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+        .warning-banner p strong { color: #FCA5A5; }
+
+        /* Footer */
+        .page-footer {
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid var(--surface-border);
+            padding: 40px 0;
+            text-align: center;
+        }
+        .page-footer p { font-size: 13px; color: var(--text-dim); }
+        .page-footer a { color: var(--text-muted); transition: color var(--transition-fast); }
+        .page-footer a:hover { color: var(--primary-light); }
+
+        /* ══════════════════════════════════════════════════════════════
+           REVEAL ANIMATION
+           ══════════════════════════════════════════════════════════════ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* ══════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ══════════════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .navbar { top: 10px; left: 10px; right: 10px; padding: 10px 16px; }
+            .page-hero { padding: 130px 0 60px; }
+            .card { padding: 28px 22px; }
+            .data-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .retention-highlight { flex-direction: column; gap: 12px; text-align: center; }
+            .hero-meta { gap: 16px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 34px; }
+            .data-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+        </style>
+    </head>
+    <body>
+
+        <!-- Background Effects -->
+        <div class="bg-grid"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <!-- Navbar -->
+        <header class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark">
+                        <img src="icon.png" alt="Toolnic" />
+                    </div>
+                    <span>Toolnic</span>
+                </a>
+                <a href="index.html" class="nav-back">
+                    <i class="ph-bold ph-arrow-left"></i>
+                    Back to Home
+                </a>
+            </div>
+        </header>
+
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="danger-badge reveal">
+                    <i class="ph-bold ph-warning-circle"></i>
+                    Account Deletion
+                </div>
+                <h1 class="reveal">Delete Your <span
+                        class="highlight">Toolnic</span><br>Account</h1>
+                <p class="reveal">We respect your privacy and give you full
+                    control over your account and data. Your deletion request
+                    will be processed securely and permanently.</p>
+                <div class="hero-meta reveal">
+                    <span class="meta-pill"><i
+                            class="ph-bold ph-user-circle"></i> Developer:
+                        Sameer Singh</span>
+                    <span class="meta-pill"><i class="ph-bold ph-envelope"></i>
+                        tools.toolnic@gmail.com</span>
+                    <span class="meta-pill"><i class="ph-bold ph-calendar"></i>
+                        Updated: June 2026</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <main class="content-area">
+            <div class="container">
+
+                <!-- Option 1 -->
+                <div class="card reveal">
+                    <span class="option-label label-primary">
+                        <i class="ph-bold ph-star"></i> Option 1 Recommended
+                    </span>
+                    <div class="section-title">
+                        <div class="section-icon icon-primary">
+                            <i class="ph-bold ph-device-mobile"></i>
+                        </div>
+                        <h2>Delete via the App</h2>
+                    </div>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <strong>Open Toolnic</strong>
+                                <span>Launch the Toolnic app on your Android
+                                    device.</span>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <strong>Go to Profile or Settings</strong>
+                                <span>Navigate to your account settings from the
+                                    home screen.</span>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <strong>Tap "Delete Account"</strong>
+                                <span>Find and select the Delete Account option
+                                    in the menu.</span>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <strong>Confirm the deletion</strong>
+                                <span>Review the warning and confirm. Your
+                                    request will be submitted
+                                    immediately.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="card reveal">
+                    <span class="option-label label-secondary">
+                        Option 2 Via Email
+                    </span>
+                    <div class="section-title">
+                        <div class="section-icon icon-cyan">
+                            <i class="ph-bold ph-envelope-open"></i>
+                        </div>
+                        <h2>Delete via Email Request</h2>
+                    </div>
+                    <p
+                        style="font-size:14px;color:var(--text-muted);margin-bottom:4px;">
+                        If you cannot access the app, send us a deletion request
+                        by email:
+                    </p>
+
+                    <div class="email-block">
+                        <div class="email-label">Support Email</div>
+                        <a
+                            href="mailto:tools.toolnic@gmail.com">tools.toolnic@gmail.com</a>
+                    </div>
+
+                    <div class="subject-block">
+                        <div class="sub-label">Email Subject</div>
+                        <p>Delete My Toolnic Account</p>
+                    </div>
+
+                    <p
+                        style="font-size:14px;color:var(--text-muted);margin-top:20px;margin-bottom:14px;font-weight:600;">Please
+                        include in your email:</p>
+                    <ul class="include-list">
+                        <li>
+                            <i class="ph-bold ph-check-circle"></i>
+                            The Google account email used to sign in to Toolnic.
+                        </li>
+                        <li>
+                            <i class="ph-bold ph-check-circle"></i>
+                            Your device model <span
+                                style="color:var(--text-dim)">(optional, but
+                                helpful)</span>.
+                        </li>
+                        <li>
+                            <i class="ph-bold ph-check-circle"></i>
+                            Any additional details that may help identify your
+                            account.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- What Data Is Deleted -->
+                <div class="card danger-card reveal">
+                    <div class="section-title">
+                        <div class="section-icon icon-danger">
+                            <i class="ph-bold ph-trash"></i>
+                        </div>
+                        <h2>What Account Data Is Deleted</h2>
+                    </div>
+                    <p
+                        style="font-size:14px;color:var(--text-muted);margin-bottom:20px;">
+                        When your account deletion request is processed, the
+                        following account-related information will be
+                        permanently removed from our systems:
+                    </p>
+                    <div class="data-grid">
+                        <div class="data-item deleted">
+                            <i class="ph-bold ph-google-logo"></i>
+                            Google Sign-In association
+                        </div>
+                        <div class="data-item deleted">
+                            <i class="ph-bold ph-shield-slash"></i>
+                            Authentication records
+                        </div>
+                    </div>
+                    <div class="warning-banner">
+                        <i class="ph-bold ph-warning"></i>
+                        <p><strong>This action is permanent and
+                                irreversible.</strong> Once your account is
+                            deleted, you will not be able to recover it or any
+                            associated data tied to your account on our
+                            servers.</p>
+                    </div>
+                </div>
+
+                <!-- Local Data -->
+                <div class="card success-card reveal">
+                    <div class="section-title">
+                        <div class="section-icon icon-success">
+                            <i class="ph-bold ph-device-mobile-camera"></i>
+                        </div>
+                        <h2>Local Data Stored on Your Device</h2>
+                    </div>
+                    <p
+                        style="font-size:14px;color:var(--text-muted);margin-bottom:20px;">
+                        Most Toolnic features store data <strong
+                            style="color:var(--text)">only on your own
+                            device</strong> using secure local storage it is
+                        <em>not</em> uploaded to Toolnic servers.
+                    </p>
+                    <div class="data-grid">
+                        <div class="data-item local">
+                            <i class="ph-bold ph-wifi-high"></i> Speed Test
+                            History
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-robot"></i> AI PDF Summary
+                            History
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-speaker-high"></i> Read Aloud
+                            History
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-bell"></i> Reminder History
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-currency-dollar"></i> Expense
+                            Tracker Data
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-receipt"></i> Invoice History
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-note-pencil"></i> Notes
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-file-pdf"></i> Recent PDF
+                            History
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-sliders"></i> App Preferences
+                        </div>
+                        <div class="data-item local">
+                            <i class="ph-bold ph-gear"></i> Settings
+                        </div>
+                    </div>
+
+                    <div class="divider">You can delete this local data at any
+                        time</div>
+
+                    <div class="method-list">
+                        <div class="method-item">
+                            <i class="ph-bold ph-broom"></i>
+                            Clear history from within the app using the in-app
+                            clear options.
+                        </div>
+                        <div class="method-item">
+                            <i class="ph-bold ph-hard-drives"></i>
+                            Clear app storage from Android Settings &rarr; Apps
+                            &rarr; Toolnic &rarr; Storage.
+                        </div>
+                        <div class="method-item">
+                            <i class="ph-bold ph-trash-simple"></i>
+                            Uninstall the Toolnic app to remove all locally
+                            stored data.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Retention -->
+                <div class="card reveal">
+                    <div class="section-title">
+                        <div class="section-icon icon-warning">
+                            <i class="ph-bold ph-clock"></i>
+                        </div>
+                        <h2>Data Retention Policy</h2>
+                    </div>
+                    <p style="font-size:14px;color:var(--text-muted);">
+                        Toolnic does not permanently store your locally saved
+                        history on our servers. If any authentication-related
+                        account information exists, it will be permanently
+                        deleted after your request is verified.
+                    </p>
+                    <div class="retention-highlight">
+                        <div class="days">30</div>
+                        <div class="desc">
+                            <strong>Days Maximum Retention Period</strong>
+                            Any authentication-related account information will
+                            be permanently and irreversibly deleted within
+                            <strong
+                                style="color:#FCD34D;display:inline;font-size:inherit">30
+                                days</strong> after your deletion request has
+                            been verified by our team.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="card reveal">
+                    <div class="section-title">
+                        <div class="section-icon icon-primary">
+                            <i class="ph-bold ph-headset"></i>
+                        </div>
+                        <h2>Contact &amp; Support</h2>
+                    </div>
+                    <p
+                        style="font-size:14px;color:var(--text-muted);margin-bottom:24px;">
+                        Have questions or need assistance with your deletion
+                        request? Reach out to us:
+                    </p>
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <i class="ph-bold ph-user"></i>
+                            <div class="c-label">Developer</div>
+                            <div class="c-value">Sameer Singh</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ph-bold ph-app-window"></i>
+                            <div class="c-label">Application</div>
+                            <div class="c-value">Toolnic</div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="ph-bold ph-envelope"></i>
+                            <div class="c-label">Support Email</div>
+                            <a href="mailto:tools.toolnic@gmail.com"
+                                class="c-value">tools.toolnic@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="page-footer">
+            <div class="container">
+                <p>
+                    &copy; 2026 <a href="index.html">Toolnic</a> &middot;
+                    Developed by <strong style="color:var(--text-muted)">Sameer
+                        Singh</strong> &middot; <a
+                        href="mailto:tools.toolnic@gmail.com">tools.toolnic@gmail.com</a>
+                </p>
+            </div>
+        </footer>
+
+        <script>
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 30);
+            }, { passive: true });
+
+            // Reveal on scroll
+            const reveals = document.querySelectorAll('.reveal');
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e, i) => {
+                    if (e.isIntersecting) {
+                        setTimeout(() => e.target.classList.add('visible'), i * 80);
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.08 });
+            reveals.forEach(el => io.observe(el));
+        </script>
+    </body>
+</html>

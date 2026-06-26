@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Privacy Policy – Toolnic</title>
+        <meta name="description"
+            content="Toolnic's Privacy Policy explains how we collect, use, store, and protect your information when you use our app." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="icon" href="icon.png">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #6366F1; --primary-dark: #4F46E5; --primary-light: #818CF8;
+            --secondary: #06B6D4; --accent: #EC4899; --accent-2: #F59E0B;
+            --success: #10B981; --danger: #EF4444;
+            --bg: #0A0A0F; --bg-2: #0F0F17; --bg-3: #161622;
+            --surface: rgba(255,255,255,0.03); --surface-hover: rgba(255,255,255,0.06);
+            --surface-border: rgba(255,255,255,0.08); --surface-border-hover: rgba(255,255,255,0.15);
+            --text: #FFFFFF; --text-muted: #94A3B8; --text-dim: #64748B;
+            --radius: 24px; --radius-sm: 14px; --radius-lg: 32px;
+            --transition: 0.5s cubic-bezier(0.4,0,0.2,1);
+            --transition-fast: 0.25s cubic-bezier(0.4,0,0.2,1);
+        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        h1,h2,h3,h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.03em; }
+        a { text-decoration: none; color: inherit; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        /* Background */
+        .bg-grid { position: fixed; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px); background-size: 60px 60px; mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%); -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%); pointer-events: none; z-index: 0; }
+        .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; opacity: 0.3; animation: orb-float 20s ease-in-out infinite; }
+        .orb-1 { width: 500px; height: 500px; top: -150px; right: -100px; background: radial-gradient(circle, #06B6D4, transparent 70%); }
+        .orb-2 { width: 450px; height: 450px; bottom: -150px; left: -80px; background: radial-gradient(circle, #6366F1, transparent 70%); animation-delay: -9s; }
+        @keyframes orb-float { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(40px,-25px) scale(1.08); } 66% { transform: translate(-25px,35px) scale(0.95); } }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--secondary), var(--primary)); border-radius: 10px; }
+
+        /* Navbar */
+        .navbar { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 1000; padding: 14px 24px; border-radius: 100px; background: rgba(10,10,15,0.6); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid var(--surface-border); transition: all var(--transition); }
+        .navbar.scrolled { background: rgba(10,10,15,0.9); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+        .logo-mark { width: 42px; height: 42px; border-radius: 12px; background: transparent; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(99,102,241,0.35); position: relative; overflow: hidden; flex-shrink: 0; }
+        .logo-mark img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; display: block; }
+        .logo-mark::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(255,255,255,0.25), transparent); transform: translateX(-100%); transition: transform 0.6s; z-index: 1; pointer-events: none; }
+        .logo:hover .logo-mark::before { transform: translateX(100%); }
+        .nav-back { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--text-muted); padding: 8px 20px; border-radius: 100px; border: 1px solid var(--surface-border); background: var(--surface); transition: all var(--transition-fast); }
+        .nav-back:hover { color: var(--text); border-color: var(--secondary); background: rgba(6,182,212,0.1); }
+
+        /* Hero */
+        .page-hero { padding: 160px 0 80px; text-align: center; position: relative; z-index: 1; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 100px; background: rgba(6,182,212,0.12); border: 1px solid rgba(6,182,212,0.3); font-size: 13px; font-weight: 600; color: #67E8F9; margin-bottom: 28px; letter-spacing: 0.03em; }
+        .badge i { font-size: 14px; color: var(--secondary); }
+        .page-hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .gradient-text { background: linear-gradient(135deg, var(--secondary), var(--primary-light)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-hero p { font-size: 17px; color: var(--text-muted); max-width: 540px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .meta-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+        .meta-pill i { color: var(--secondary); }
+
+        /* Content */
+        .content-area { position: relative; z-index: 1; padding-bottom: 120px; }
+
+        /* Section */
+        .pp-section { background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius); padding: 36px 40px; margin-bottom: 20px; position: relative; overflow: hidden; transition: border-color var(--transition-fast); }
+        .pp-section::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(6,182,212,0.04), transparent 60%); pointer-events: none; }
+        .pp-section:hover { border-color: var(--surface-border-hover); }
+
+        .pp-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; }
+        .pp-icon { width: 46px; height: 46px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; }
+        .icon-cyan   { background: rgba(6,182,212,0.15);  color: #67E8F9; }
+        .icon-primary { background: rgba(99,102,241,0.15); color: var(--primary-light); }
+        .icon-success { background: rgba(16,185,129,0.15); color: #6EE7B7; }
+        .icon-warning { background: rgba(245,158,11,0.15); color: #FCD34D; }
+        .icon-accent  { background: rgba(236,72,153,0.15); color: #F9A8D4; }
+        .icon-danger  { background: rgba(239,68,68,0.15);  color: #FCA5A5; }
+
+        .pp-header-text h2 { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+        .pp-header-text span { font-size: 13px; color: var(--text-dim); }
+
+        .pp-body { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+        .pp-body p { margin-bottom: 12px; }
+        .pp-body p:last-child { margin-bottom: 0; }
+
+        .pp-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+        .pp-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-muted); }
+        .pp-list li i { color: #67E8F9; font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+
+        /* Permissions grid */
+        .perms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+        .perm-item { padding: 18px 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); transition: all var(--transition-fast); }
+        .perm-item:hover { border-color: rgba(6,182,212,0.3); background: rgba(6,182,212,0.04); }
+        .perm-item .perm-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+        .perm-item .perm-head i { font-size: 18px; color: #67E8F9; }
+        .perm-item .perm-head strong { font-size: 14px; font-weight: 600; color: var(--text); }
+        .perm-item p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+
+        /* Third-party grid */
+        .third-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+        .third-item { padding: 14px 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; transition: all var(--transition-fast); }
+        .third-item:hover { border-color: var(--surface-border-hover); color: var(--text); }
+        .third-item i { color: var(--primary-light); flex-shrink: 0; }
+
+        /* Highlight box */
+        .highlight-box { background: rgba(6,182,212,0.07); border: 1px solid rgba(6,182,212,0.18); border-radius: var(--radius-sm); padding: 18px 22px; margin-top: 14px; }
+        .highlight-box.warning-box { background: rgba(239,68,68,0.05); border-color: rgba(239,68,68,0.15); }
+        .highlight-box.success-box { background: rgba(16,185,129,0.05); border-color: rgba(16,185,129,0.15); }
+        .highlight-box.primary-box { background: rgba(99,102,241,0.07); border-color: rgba(99,102,241,0.18); }
+
+        /* Use purposes */
+        .use-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+        .use-item { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); font-size: 13px; color: var(--text-muted); transition: all var(--transition-fast); }
+        .use-item:hover { border-color: var(--surface-border-hover); color: var(--text); }
+        .use-item i { color: #6EE7B7; flex-shrink: 0; font-size: 15px; }
+
+        /* Contact */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 16px; }
+        .contact-item { padding: 22px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); text-align: center; transition: all var(--transition-fast); }
+        .contact-item:hover { border-color: var(--secondary); background: rgba(6,182,212,0.06); transform: translateY(-2px); }
+        .contact-item i { font-size: 26px; color: #67E8F9; display: block; margin-bottom: 8px; }
+        .contact-item .c-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 4px; }
+        .contact-item .c-value { font-size: 13px; color: var(--text); font-weight: 600; }
+        .contact-item a.c-value { color: #67E8F9; }
+        .contact-item a.c-value:hover { color: var(--accent); }
+
+        /* Copyright banner */
+        .copyright-banner { background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.08)); border: 1px solid rgba(6,182,212,0.2); border-radius: var(--radius); padding: 32px 40px; text-align: center; margin-bottom: 20px; }
+        .copyright-banner p { font-size: 15px; color: var(--text-muted); }
+        .copyright-banner strong { color: var(--text); }
+
+        /* Footer */
+        .page-footer { position: relative; z-index: 1; border-top: 1px solid var(--surface-border); padding: 40px 0; text-align: center; }
+        .page-footer p { font-size: 13px; color: var(--text-dim); }
+        .page-footer a { color: var(--text-muted); transition: color var(--transition-fast); }
+        .page-footer a:hover { color: #67E8F9; }
+
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .navbar { top: 10px; left: 10px; right: 10px; padding: 10px 16px; }
+            .page-hero { padding: 130px 0 60px; }
+            .pp-section { padding: 24px 20px; }
+            .perms-grid { grid-template-columns: 1fr; }
+            .third-grid { grid-template-columns: 1fr 1fr; }
+            .use-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .copyright-banner { padding: 24px 20px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 34px; }
+            .third-grid { grid-template-columns: 1fr; }
+        }
+        </style>
+    </head>
+    <body>
+
+        <div class="bg-grid"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <!-- Navbar -->
+        <header class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark"><img src="icon.png"
+                            alt="Toolnic" /></div>
+                    <span>Toolnic</span>
+                </a>
+                <a href="index.html" class="nav-back">
+                    <i class="ph-bold ph-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="badge reveal"><i
+                        class="ph-bold ph-shield-check"></i> Privacy First</div>
+                <h1 class="reveal">Privacy <span
+                        class="gradient-text">Policy</span></h1>
+                <p class="reveal">Your privacy is important to us. This policy
+                    explains how Toolnic collects, uses, stores, and protects
+                    your information.</p>
+                <div class="hero-meta reveal">
+                    <span class="meta-pill"><i
+                            class="ph-bold ph-calendar-check"></i> Effective:
+                        June 25, 2026</span>
+                    <span class="meta-pill"><i
+                            class="ph-bold ph-arrows-clockwise"></i> Updated:
+                        June 25, 2026</span>
+                    <span class="meta-pill"><i class="ph-bold ph-user"></i>
+                        Sameer Singh</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <main class="content-area">
+            <div class="container">
+
+                <!-- Introduction -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-cyan"><i
+                                class="ph-bold ph-hand-waving"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Introduction</h2>
+                            <span>About this Privacy Policy</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Welcome to <strong
+                                style="color:var(--text)">Toolnic</strong>,
+                            developed by <strong
+                                style="color:var(--text)">Sameer Singh</strong>
+                            ("Developer", "we", "our", or "us").</p>
+                        <p>Your privacy is important to us. This Privacy Policy
+                            explains how Toolnic collects, uses, stores, and
+                            protects your information when you use our mobile
+                            application.</p>
+                        <div class="highlight-box success-box">
+                            <p
+                                style="margin:0;font-size:14px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-check-circle"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                By downloading, installing, or using Toolnic,
+                                you agree to the practices described in this
+                                Privacy Policy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Toolnic -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-primary"><i
+                                class="ph-bold ph-app-window"></i></div>
+                        <div class="pp-header-text">
+                            <h2>About Toolnic</h2>
+                            <span>What the app provides</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic is an all-in-one utility application that
+                            provides a wide range of productivity and utility
+                            tools:</p>
+                        <div
+                            style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">PDF
+                                Tools</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">AI
+                                PDF Summarizer</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">QR
+                                Scanner &amp; Generator</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Smart
+                                Reminders</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Water
+                                Reminder</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Habit
+                                Reminder</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Calculator</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Unit
+                                Converter</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Compass</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Magnifier</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Internet
+                                Speed Test</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Text-to-Speech</span>
+                            <span
+                                style="padding:5px 13px;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.2);border-radius:100px;font-size:12px;color:#67E8F9;font-weight:500">Video
+                                Compressor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Information We Collect -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-warning"><i
+                                class="ph-bold ph-database"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Information We Collect</h2>
+                            <span>What data Toolnic may receive</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic is designed to collect only the information
+                            necessary to provide its services.</p>
+
+                        <p
+                            style="font-weight:600;color:var(--text);margin-top:18px;margin-bottom:8px;">Google
+                            Account Information</p>
+                        <p>If you choose to sign in using Google Sign-In, we may
+                            receive your name, email address, profile picture
+                            (if available), and a unique Google account
+                            identifier. This information is used solely for
+                            authentication and account identification.</p>
+                        <div class="highlight-box success-box">
+                            <p
+                                style="margin:0;font-size:13px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-lock"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                We <strong style="color:#6EE7B7">never</strong>
+                                collect or store your Google account
+                                password.</p>
+                        </div>
+
+                        <p
+                            style="font-weight:600;color:var(--text);margin-top:20px;margin-bottom:8px;">Information
+                            You Provide</p>
+                        <p>You may voluntarily provide information such as
+                            documents selected for processing, reminder details,
+                            preferences, feedback, or support requests.</p>
+
+                        <p
+                            style="font-weight:600;color:var(--text);margin-top:20px;margin-bottom:8px;">Device
+                            Information</p>
+                        <p>To improve app performance and reliability, Toolnic
+                            may automatically collect limited technical
+                            information including your device model, OS version,
+                            app version, language, time zone, and anonymous
+                            crash diagnostics.</p>
+                    </div>
+                </div>
+
+                <!-- Permissions -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-accent"><i
+                                class="ph-bold ph-lock-key"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Permissions We Request</h2>
+                            <span>Only what's needed for the features you
+                                use</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic requests only the permissions required for
+                            the features you choose to use:</p>
+                        <div class="perms-grid">
+                            <div class="perm-item">
+                                <div class="perm-head"><i
+                                        class="ph-bold ph-camera"></i><strong>Camera</strong></div>
+                                <p>Used for scanning QR Codes and documents.</p>
+                            </div>
+                            <div class="perm-item">
+                                <div class="perm-head"><i
+                                        class="ph-bold ph-images"></i><strong>Photos
+                                        &amp; Files</strong></div>
+                                <p>Used for opening, editing, converting,
+                                    compressing, saving, and managing files you
+                                    select.</p>
+                            </div>
+                            <div class="perm-item">
+                                <div class="perm-head"><i
+                                        class="ph-bold ph-bell"></i><strong>Notifications</strong></div>
+                                <p>Used to deliver Smart Reminders, Water
+                                    Reminders, Habit Reminders, and scheduled
+                                    notifications.</p>
+                            </div>
+                            <div class="perm-item">
+                                <div class="perm-head"><i
+                                        class="ph-bold ph-wifi-high"></i><strong>Internet
+                                        Access</strong></div>
+                                <p>Required for Google Sign-In, AI-powered
+                                    features, advertisement services, and app
+                                    updates.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How We Use -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-success"><i
+                                class="ph-bold ph-gear-six"></i></div>
+                        <div class="pp-header-text">
+                            <h2>How We Use Your Information</h2>
+                            <span>Purposes for data use</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>We use collected information only to:</p>
+                        <div class="use-grid">
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Provide
+                                requested application features</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i>
+                                Authenticate users via Google Sign-In</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Process
+                                files selected by the user</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i>
+                                Generate AI-powered results</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Deliver
+                                reminder notifications</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Display
+                                advertisements</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Improve
+                                app performance &amp; reliability</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Detect
+                                and fix technical issues</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Respond
+                                to support requests</div>
+                            <div class="use-item"><i
+                                    class="ph-bold ph-check-circle"></i> Protect
+                                app security &amp; integrity</div>
+                        </div>
+                        <div class="highlight-box success-box"
+                            style="margin-top:16px;">
+                            <p
+                                style="margin:0;font-size:13px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-shield-check"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                We do <strong style="color:#6EE7B7">not</strong>
+                                use your information for unrelated marketing
+                                purposes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Features -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-primary"><i
+                                class="ph-bold ph-robot"></i></div>
+                        <div class="pp-header-text">
+                            <h2>AI Features</h2>
+                            <span>How AI content is processed</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic includes AI-powered features that help users
+                            summarize documents and improve productivity.</p>
+                        <p>When you use these features, selected content may be
+                            processed solely to generate the requested
+                            result.</p>
+                        <div class="highlight-box success-box">
+                            <p
+                                style="margin:0;font-size:13px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-check-circle"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                We do <strong style="color:#6EE7B7">not
+                                    permanently store</strong> your uploaded
+                                documents or AI-generated content unless
+                                explicitly stated within the application.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Data Storage -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-success"><i
+                                class="ph-bold ph-device-mobile-camera"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Local Data Storage</h2>
+                            <span>Data stored on your device</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Most application data including reminder schedules,
+                            user preferences, settings, recent files, and tool
+                            history is stored <strong
+                                style="color:var(--text)">locally on your
+                                device</strong>.</p>
+                        <div class="highlight-box">
+                            <p
+                                style="margin:0;font-size:13px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-trash"
+                                    style="color:#67E8F9;margin-right:6px;"></i>
+                                You may remove this information at any time by
+                                <strong style="color:var(--text)">clearing the
+                                    app's data</strong> or <strong
+                                    style="color:var(--text)">uninstalling the
+                                    application</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advertising -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-warning"><i
+                                class="ph-bold ph-megaphone"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Advertising</h2>
+                            <span>How ads work in Toolnic</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic uses <strong style="color:var(--text)">Google
+                                AdMob</strong> to display advertisements. Google
+                            AdMob may collect limited information such as:</p>
+                        <ul class="pp-list" style="margin-top:12px;">
+                            <li><i class="ph-bold ph-info"></i> Advertising
+                                ID</li>
+                            <li><i class="ph-bold ph-info"></i> Device
+                                information</li>
+                            <li><i class="ph-bold ph-info"></i> Application
+                                interaction data</li>
+                            <li><i class="ph-bold ph-info"></i> Approximate
+                                location derived from your IP address</li>
+                        </ul>
+                        <p style="margin-top:12px;">This is used for the purpose
+                            of serving relevant advertisements.</p>
+                    </div>
+                </div>
+
+                <!-- Third-Party Services -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-accent"><i
+                                class="ph-bold ph-plug"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Third-Party Services</h2>
+                            <span>External services used by Toolnic</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic may use the following trusted third-party
+                            services. Each operates under its own privacy policy
+                            and terms:</p>
+                        <div class="third-grid">
+                            <div class="third-item"><i
+                                    class="ph-bold ph-google-logo"></i> Google
+                                Sign-In</div>
+                            <div class="third-item"><i
+                                    class="ph-bold ph-google-play-logo"></i>
+                                Google Play Services</div>
+                            <div class="third-item"><i
+                                    class="ph-bold ph-megaphone"></i> Google
+                                AdMob</div>
+                            <div class="third-item"><i
+                                    class="ph-bold ph-code"></i> Expo
+                                Libraries</div>
+                            <div class="third-item"><i
+                                    class="ph-bold ph-device-mobile"></i>
+                                Android System Services</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Sharing -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-danger"><i
+                                class="ph-bold ph-share-network"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Data Sharing</h2>
+                            <span>When and how data may be shared</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <div class="highlight-box success-box">
+                            <p
+                                style="margin:0;font-size:14px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-shield-check"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                We do <strong style="color:#6EE7B7">not sell,
+                                    rent, or trade</strong> your personal
+                                information.</p>
+                        </div>
+                        <p style="margin-top:14px;">Information may be shared
+                            only when necessary to:</p>
+                        <ul class="pp-list" style="margin-top:8px;">
+                            <li><i class="ph-bold ph-check-circle"></i> Provide
+                                requested services</li>
+                            <li><i class="ph-bold ph-check-circle"></i> Work
+                                with trusted service providers</li>
+                            <li><i class="ph-bold ph-check-circle"></i> Comply
+                                with applicable legal obligations</li>
+                            <li><i class="ph-bold ph-check-circle"></i> Protect
+                                user safety and application security</li>
+                            <li><i class="ph-bold ph-check-circle"></i> Prevent
+                                fraud or misuse of the application</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Data Security -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-success"><i
+                                class="ph-bold ph-lock"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Data Security</h2>
+                            <span>How we protect your information</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>We implement appropriate administrative, technical,
+                            and organizational measures to safeguard your
+                            information against unauthorized access, disclosure,
+                            alteration, or destruction.</p>
+                        <div class="highlight-box warning-box"
+                            style="margin-top:14px;">
+                            <p
+                                style="margin:0;font-size:13px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-warning"
+                                    style="color:#FCA5A5;margin-right:6px;"></i>
+                                No method of electronic transmission or storage
+                                can be guaranteed to be completely secure.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Retention -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-warning"><i
+                                class="ph-bold ph-clock"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Data Retention</h2>
+                            <span>How long data is kept</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <ul class="pp-list">
+                            <li><i class="ph-bold ph-check-circle"></i>
+                                Information stored locally remains on your
+                                device until you delete it or uninstall the
+                                application.</li>
+                            <li><i class="ph-bold ph-check-circle"></i>
+                                Information obtained through Google Sign-In is
+                                retained only as long as necessary to provide
+                                authentication and related services.</li>
+                        </ul>
+                        <p style="margin-top:12px;">To request account deletion,
+                            visit our <a href="delete-account.html"
+                                style="color:#67E8F9;font-weight:600;">Delete
+                                Account page</a>.</p>
+                    </div>
+                </div>
+
+                <!-- Children's Privacy -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-danger"><i
+                                class="ph-bold ph-baby"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Children's Privacy</h2>
+                            <span>Age restrictions</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>Toolnic is <strong style="color:var(--text)">not
+                                intended for children under the age of
+                                13</strong>.</p>
+                        <p>We do not knowingly collect personal information from
+                            children. If we become aware that such information
+                            has been collected, we will promptly delete it.</p>
+                    </div>
+                </div>
+
+                <!-- Changes -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-primary"><i
+                                class="ph-bold ph-arrows-clockwise"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Changes to This Privacy Policy</h2>
+                            <span>How updates are communicated</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <ul class="pp-list">
+                            <li><i class="ph-bold ph-check-circle"></i> We may
+                                revise this Privacy Policy from time to time to
+                                reflect changes in our services or legal
+                                requirements.</li>
+                            <li><i class="ph-bold ph-check-circle"></i> Any
+                                updates will be published within the application
+                                or on our official Privacy Policy webpage.</li>
+                            <li><i class="ph-bold ph-check-circle"></i>
+                                Continued use of Toolnic after such changes
+                                constitutes acceptance of the updated Privacy
+                                Policy.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-cyan"><i
+                                class="ph-bold ph-headset"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Contact Information</h2>
+                            <span>Questions, suggestions, or concerns</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <p>If you have any questions, suggestions, or concerns
+                            regarding this Privacy Policy, please contact
+                            us:</p>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="ph-bold ph-user"></i>
+                                <div class="c-label">Developer</div>
+                                <div class="c-value">Sameer Singh</div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="ph-bold ph-app-window"></i>
+                                <div class="c-label">Application</div>
+                                <div class="c-value">Toolnic</div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="ph-bold ph-envelope"></i>
+                                <div class="c-label">Email</div>
+                                <a href="mailto:tools.toolnic@gmail.com"
+                                    class="c-value">tools.toolnic@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consent -->
+                <div class="pp-section reveal">
+                    <div class="pp-header">
+                        <div class="pp-icon icon-success"><i
+                                class="ph-bold ph-check-fat"></i></div>
+                        <div class="pp-header-text">
+                            <h2>Consent</h2>
+                            <span>Your agreement to this policy</span>
+                        </div>
+                    </div>
+                    <div class="pp-body">
+                        <div class="highlight-box success-box">
+                            <p
+                                style="margin:0;font-size:14px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-check-circle"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                By downloading, installing, accessing, or using
+                                Toolnic, you acknowledge that you have <strong
+                                    style="color:var(--text)">read, understood,
+                                    and agreed</strong> to this Privacy
+                                Policy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="copyright-banner reveal">
+                    <p>&copy; 2026 <strong>Toolnic</strong>. All Rights
+                        Reserved. Developed by <strong>Sameer
+                            Singh</strong>.</p>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="container">
+                <p>&copy; 2026 <a href="index.html">Toolnic</a> &middot; <a
+                        href="terms-of-service.html">Terms of Service</a>
+                    &middot; <a href="delete-account.html">Delete Account</a>
+                    &middot; <a
+                        href="mailto:tools.toolnic@gmail.com">tools.toolnic@gmail.com</a></p>
+            </div>
+        </footer>
+
+        <script>
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); io.unobserve(e.target); } });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        </script>
+    </body>
+</html>

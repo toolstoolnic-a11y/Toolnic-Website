@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Terms of Service – Toolnic</title>
+        <meta name="description"
+            content="Read the Terms of Service for Toolnic, the all-in-one utility app developed by Sameer Singh." />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="icon" href="icon.png">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #6366F1; --primary-dark: #4F46E5; --primary-light: #818CF8;
+            --secondary: #06B6D4; --accent: #EC4899; --accent-2: #F59E0B;
+            --success: #10B981; --danger: #EF4444;
+            --bg: #0A0A0F; --bg-2: #0F0F17; --bg-3: #161622;
+            --surface: rgba(255,255,255,0.03); --surface-hover: rgba(255,255,255,0.06);
+            --surface-border: rgba(255,255,255,0.08); --surface-border-hover: rgba(255,255,255,0.15);
+            --text: #FFFFFF; --text-muted: #94A3B8; --text-dim: #64748B;
+            --radius: 24px; --radius-sm: 14px; --radius-lg: 32px;
+            --transition: 0.5s cubic-bezier(0.4,0,0.2,1);
+            --transition-fast: 0.25s cubic-bezier(0.4,0,0.2,1);
+        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+        h1,h2,h3,h4 { font-family: 'Outfit', sans-serif; letter-spacing: -0.03em; }
+        a { text-decoration: none; color: inherit; }
+
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        /* Background */
+        .bg-grid {
+            position: fixed; inset: 0;
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
+            pointer-events: none; z-index: 0;
+        }
+        .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; opacity: 0.3; animation: orb-float 20s ease-in-out infinite; }
+        .orb-1 { width: 500px; height: 500px; top: -150px; left: -100px; background: radial-gradient(circle, #6366F1, transparent 70%); }
+        .orb-2 { width: 400px; height: 400px; bottom: -150px; right: -100px; background: radial-gradient(circle, #F59E0B, transparent 70%); animation-delay: -8s; }
+        @keyframes orb-float { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(40px,-25px) scale(1.08); } 66% { transform: translate(-25px,35px) scale(0.95); } }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--primary), var(--accent)); border-radius: 10px; }
+
+        /* Navbar */
+        .navbar { position: fixed; top: 16px; left: 16px; right: 16px; z-index: 1000; padding: 14px 24px; border-radius: 100px; background: rgba(10,10,15,0.6); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid var(--surface-border); transition: all var(--transition); }
+        .navbar.scrolled { background: rgba(10,10,15,0.9); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+        .navbar-inner { display: flex; align-items: center; justify-content: space-between; }
+        .logo { display: flex; align-items: center; gap: 10px; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+        .logo-mark { width: 42px; height: 42px; border-radius: 12px; background: transparent; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px rgba(99,102,241,0.35); position: relative; overflow: hidden; flex-shrink: 0; }
+        .logo-mark img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; display: block; }
+        .logo-mark::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, transparent, rgba(255,255,255,0.25), transparent); transform: translateX(-100%); transition: transform 0.6s; z-index: 1; pointer-events: none; }
+        .logo:hover .logo-mark::before { transform: translateX(100%); }
+        .nav-back { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; color: var(--text-muted); padding: 8px 20px; border-radius: 100px; border: 1px solid var(--surface-border); background: var(--surface); transition: all var(--transition-fast); }
+        .nav-back:hover { color: var(--text); border-color: var(--primary); background: rgba(99,102,241,0.1); }
+
+        /* Hero */
+        .page-hero { padding: 160px 0 80px; text-align: center; position: relative; z-index: 1; }
+        .badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 18px; border-radius: 100px; background: rgba(99,102,241,0.12); border: 1px solid rgba(99,102,241,0.3); font-size: 13px; font-weight: 600; color: var(--primary-light); margin-bottom: 28px; letter-spacing: 0.03em; }
+        .badge i { font-size: 14px; color: var(--primary); }
+        .page-hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+        .gradient-text { background: linear-gradient(135deg, var(--primary-light), var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-hero p { font-size: 17px; color: var(--text-muted); max-width: 540px; margin: 0 auto 36px; line-height: 1.7; }
+        .hero-meta { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .meta-pill { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+        .meta-pill i { color: var(--primary); }
+
+        /* Content */
+        .content-area { position: relative; z-index: 1; padding-bottom: 120px; }
+
+        /* Section Card */
+        .tos-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--radius);
+            padding: 36px 40px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            transition: border-color var(--transition-fast);
+        }
+        .tos-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(99,102,241,0.04), transparent 60%);
+            pointer-events: none;
+        }
+        .tos-section:hover { border-color: var(--surface-border-hover); }
+
+        .tos-header {
+            display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px;
+        }
+        .tos-num {
+            width: 40px; height: 40px; border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; font-weight: 800; color: #fff;
+            box-shadow: 0 4px 16px rgba(99,102,241,0.3);
+            flex-shrink: 0;
+            font-family: 'Outfit', sans-serif;
+        }
+        .tos-header-text h2 { font-size: 20px; font-weight: 700; margin-bottom: 2px; }
+        .tos-header-text span { font-size: 13px; color: var(--text-dim); }
+
+        .tos-body { font-size: 14px; color: var(--text-muted); line-height: 1.8; }
+        .tos-body p { margin-bottom: 12px; }
+        .tos-body p:last-child { margin-bottom: 0; }
+
+        .tos-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 12px; }
+        .tos-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text-muted); }
+        .tos-list li i { color: var(--primary-light); font-size: 16px; margin-top: 2px; flex-shrink: 0; }
+        .tos-list.danger li i { color: #FCA5A5; }
+
+        /* Tools grid */
+        .tools-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+        .tag { padding: 5px 14px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); border-radius: 100px; font-size: 12px; color: var(--primary-light); font-weight: 500; }
+
+        /* Highlight box */
+        .highlight-box {
+            background: rgba(99,102,241,0.07); border: 1px solid rgba(99,102,241,0.18);
+            border-radius: var(--radius-sm); padding: 20px 24px; margin-top: 16px;
+        }
+        .highlight-box.warning-box { background: rgba(239,68,68,0.05); border-color: rgba(239,68,68,0.15); }
+        .highlight-box.success-box { background: rgba(16,185,129,0.05); border-color: rgba(16,185,129,0.15); }
+
+        /* Contact card */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 16px; }
+        .contact-item { padding: 22px; background: rgba(255,255,255,0.03); border: 1px solid var(--surface-border); border-radius: var(--radius-sm); text-align: center; transition: all var(--transition-fast); }
+        .contact-item:hover { border-color: var(--primary); background: rgba(99,102,241,0.06); transform: translateY(-2px); }
+        .contact-item i { font-size: 26px; color: var(--primary-light); display: block; margin-bottom: 8px; }
+        .contact-item .c-label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; margin-bottom: 4px; }
+        .contact-item .c-value { font-size: 13px; color: var(--text); font-weight: 600; }
+        .contact-item a.c-value { color: var(--primary-light); }
+        .contact-item a.c-value:hover { color: var(--accent); }
+
+        /* Copyright banner */
+        .copyright-banner {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(236,72,153,0.08));
+            border: 1px solid rgba(99,102,241,0.2);
+            border-radius: var(--radius);
+            padding: 32px 40px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .copyright-banner p { font-size: 15px; color: var(--text-muted); }
+        .copyright-banner strong { color: var(--text); }
+
+        /* Footer */
+        .page-footer { position: relative; z-index: 1; border-top: 1px solid var(--surface-border); padding: 40px 0; text-align: center; }
+        .page-footer p { font-size: 13px; color: var(--text-dim); }
+        .page-footer a { color: var(--text-muted); transition: color var(--transition-fast); }
+        .page-footer a:hover { color: var(--primary-light); }
+
+        /* Reveal */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .navbar { top: 10px; left: 10px; right: 10px; padding: 10px 16px; }
+            .page-hero { padding: 130px 0 60px; }
+            .tos-section { padding: 24px 20px; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .copyright-banner { padding: 24px 20px; }
+        }
+        @media (max-width: 480px) {
+            .page-hero h1 { font-size: 34px; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+        </style>
+    </head>
+    <body>
+
+        <div class="bg-grid"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <!-- Navbar -->
+        <header class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="index.html" class="logo">
+                    <div class="logo-mark"><img src="icon.png"
+                            alt="Toolnic" /></div>
+                    <span>Toolnic</span>
+                </a>
+                <a href="index.html" class="nav-back">
+                    <i class="ph-bold ph-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </header>
+
+        <!-- Hero -->
+        <section class="page-hero">
+            <div class="container">
+                <div class="badge reveal"><i class="ph-bold ph-scroll"></i>
+                    Legal Document</div>
+                <h1 class="reveal">Terms of <span
+                        class="gradient-text">Service</span></h1>
+                <p class="reveal">Please read these terms carefully before using
+                    Toolnic. By using the app, you agree to be bound by these
+                    terms.</p>
+                <div class="hero-meta reveal">
+                    <span class="meta-pill"><i
+                            class="ph-bold ph-calendar-check"></i> Effective:
+                        June 25, 2026</span>
+                    <span class="meta-pill"><i
+                            class="ph-bold ph-arrows-clockwise"></i> Updated:
+                        June 25, 2026</span>
+                    <span class="meta-pill"><i class="ph-bold ph-user"></i>
+                        Sameer Singh</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content -->
+        <main class="content-area">
+            <div class="container">
+
+                <!-- 1. Acceptance -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">1</div>
+                        <div class="tos-header-text">
+                            <h2>Acceptance of Terms</h2>
+                            <span>Your agreement to use Toolnic</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>Welcome to <strong
+                                style="color:var(--text)">Toolnic</strong>,
+                            developed by <strong
+                                style="color:var(--text)">Sameer
+                                Singh</strong>.</p>
+                        <p>By downloading, installing, or using Toolnic, you
+                            agree to comply with these Terms of Service. If you
+                            do not agree with these Terms, please do not use the
+                            application.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Description -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">2</div>
+                        <div class="tos-header-text">
+                            <h2>Description of the Service</h2>
+                            <span>What Toolnic offers</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>Toolnic is a multi-utility mobile application that
+                            offers productivity and utility tools, including but
+                            not limited to:</p>
+                        <div class="tools-tags">
+                            <span class="tag"><i
+                                    class="ph-bold ph-file-pdf"></i> PDF
+                                Tools</span>
+                            <span class="tag"><i class="ph-bold ph-robot"></i>
+                                AI PDF Summarizer</span>
+                            <span class="tag"><i class="ph-bold ph-qr-code"></i>
+                                QR Code Scanner &amp; Generator</span>
+                            <span class="tag"><i class="ph-bold ph-bell"></i>
+                                Smart Reminders</span>
+                            <span class="tag"><i class="ph-bold ph-drop"></i>
+                                Water &amp; Habit Reminders</span>
+                            <span class="tag"><i
+                                    class="ph-bold ph-calculator"></i>
+                                Calculator &amp; Unit Converter</span>
+                            <span class="tag"><i class="ph-bold ph-compass"></i>
+                                Compass &amp; Magnifier</span>
+                            <span class="tag"><i
+                                    class="ph-bold ph-wifi-high"></i> Internet
+                                Speed Test</span>
+                            <span class="tag"><i
+                                    class="ph-bold ph-speaker-high"></i>
+                                Text-to-Speech</span>
+                            <span class="tag"><i class="ph-bold ph-video"></i>
+                                Video &amp; Image Utilities</span>
+                            <span class="tag"><i
+                                    class="ph-bold ph-dots-three"></i> Other
+                                Utility Features</span>
+                        </div>
+                        <div class="highlight-box" style="margin-top:20px;">
+                            <p
+                                style="margin:0;font-size:13px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-info"
+                                    style="color:var(--primary-light);margin-right:6px;"></i>
+                                Features may be added, modified, or removed at
+                                any time to improve the application.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. User Accounts -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">3</div>
+                        <div class="tos-header-text">
+                            <h2>User Accounts</h2>
+                            <span>Account responsibilities</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <ul class="tos-list">
+                            <li><i class="ph-bold ph-check-circle"></i> Some
+                                features require Google Sign-In.</li>
+                            <li><i class="ph-bold ph-check-circle"></i> You are
+                                responsible for maintaining the confidentiality
+                                of your Google account and for all activities
+                                performed using your account.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 4. Acceptable Use -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">4</div>
+                        <div class="tos-header-text">
+                            <h2>Acceptable Use</h2>
+                            <span>What you may and may not do</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>You agree to use Toolnic only for lawful purposes.
+                            You agree <strong
+                                style="color:var(--text)">not</strong> to:</p>
+                        <ul class="tos-list danger" style="margin-top:12px;">
+                            <li><i class="ph-bold ph-x-circle"></i> Use the
+                                application for illegal or fraudulent
+                                activities.</li>
+                            <li><i class="ph-bold ph-x-circle"></i> Attempt to
+                                interfere with the operation or security of the
+                                application.</li>
+                            <li><i class="ph-bold ph-x-circle"></i> Reverse
+                                engineer, copy, or modify the application
+                                without permission.</li>
+                            <li><i class="ph-bold ph-x-circle"></i> Upload
+                                malicious software or harmful content.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. AI Features -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">5</div>
+                        <div class="tos-header-text">
+                            <h2>AI Features</h2>
+                            <span>Limitations of AI-generated content</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>Toolnic includes AI-powered features designed to
+                            assist users.</p>
+                        <div class="highlight-box warning-box">
+                            <p
+                                style="margin:0;font-size:14px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-warning"
+                                    style="color:#FCA5A5;margin-right:6px;"></i>
+                                AI-generated responses are provided for <strong
+                                    style="color:#FCA5A5">informational purposes
+                                    only</strong> and may not always be
+                                accurate. Users are responsible for reviewing
+                                and verifying AI-generated content before
+                                relying on it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Advertisements -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">6</div>
+                        <div class="tos-header-text">
+                            <h2>Advertisements</h2>
+                            <span>How ads support Toolnic</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <ul class="tos-list">
+                            <li><i class="ph-bold ph-check-circle"></i> Toolnic
+                                may display advertisements through <strong
+                                    style="color:var(--text)">Google
+                                    AdMob</strong>.</li>
+                            <li><i class="ph-bold ph-check-circle"></i>
+                                Advertisements help support the continued
+                                development and maintenance of the
+                                application.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 7. Intellectual Property -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">7</div>
+                        <div class="tos-header-text">
+                            <h2>Intellectual Property</h2>
+                            <span>Ownership of Toolnic content</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>All content, logos, graphics, designs, software, and
+                            other intellectual property associated with Toolnic
+                            are owned by <strong
+                                style="color:var(--text)">Sameer Singh</strong>
+                            or licensed for use.</p>
+                        <div class="highlight-box warning-box"
+                            style="margin-top:14px;">
+                            <p
+                                style="margin:0;font-size:14px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-prohibit"
+                                    style="color:#FCA5A5;margin-right:6px;"></i>
+                                You may not reproduce, distribute, modify, or
+                                commercially exploit any part of the application
+                                without prior written permission.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Disclaimer -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">8</div>
+                        <div class="tos-header-text">
+                            <h2>Disclaimer</h2>
+                            <span>Service provided as-is</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>Toolnic is provided on an <strong
+                                style="color:var(--text)">"AS IS"</strong> and
+                            <strong
+                                style="color:var(--text)">"AS AVAILABLE"</strong>
+                            basis.</p>
+                        <p>While we strive to provide reliable and accurate
+                            services, we do not guarantee that the application
+                            will always be error-free, uninterrupted, or
+                            suitable for every purpose.</p>
+                    </div>
+                </div>
+
+                <!-- 9. Limitation of Liability -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">9</div>
+                        <div class="tos-header-text">
+                            <h2>Limitation of Liability</h2>
+                            <span>Extent of developer responsibility</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>To the fullest extent permitted by law, <strong
+                                style="color:var(--text)">Sameer Singh</strong>
+                            shall not be liable for any indirect, incidental,
+                            special, or consequential damages resulting from the
+                            use or inability to use Toolnic.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Privacy -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">10</div>
+                        <div class="tos-header-text">
+                            <h2>Privacy</h2>
+                            <span>How your data is handled</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>Your use of Toolnic is also governed by our <a
+                                href="privacy-policy.html"
+                                style="color:var(--primary-light);font-weight:600;">Privacy
+                                Policy</a>, which explains how your information
+                            is collected, used, and protected.</p>
+                    </div>
+                </div>
+
+                <!-- 11. Changes -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">11</div>
+                        <div class="tos-header-text">
+                            <h2>Changes to These Terms</h2>
+                            <span>Updates and modifications</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <ul class="tos-list">
+                            <li><i class="ph-bold ph-check-circle"></i> We may
+                                update these Terms of Service from time to
+                                time.</li>
+                            <li><i class="ph-bold ph-check-circle"></i> Updated
+                                versions will be published within the
+                                application or on our official website.</li>
+                            <li><i class="ph-bold ph-check-circle"></i>
+                                Continued use of Toolnic after changes become
+                                effective constitutes acceptance of the updated
+                                Terms.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 12. Governing Law -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">12</div>
+                        <div class="tos-header-text">
+                            <h2>Governing Law</h2>
+                            <span>Jurisdiction and legal framework</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <ul class="tos-list">
+                            <li><i class="ph-bold ph-scales"></i> These Terms
+                                shall be governed by and interpreted in
+                                accordance with the laws of <strong
+                                    style="color:var(--text)">India</strong>.</li>
+                            <li><i class="ph-bold ph-scales"></i> Any disputes
+                                relating to these Terms shall be subject to the
+                                jurisdiction of the competent courts in
+                                India.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 13. Contact -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">13</div>
+                        <div class="tos-header-text">
+                            <h2>Contact Us</h2>
+                            <span>Get in touch with the developer</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <p>If you have any questions regarding these Terms of
+                            Service, please contact us:</p>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i class="ph-bold ph-user"></i>
+                                <div class="c-label">Developer</div>
+                                <div class="c-value">Sameer Singh</div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="ph-bold ph-app-window"></i>
+                                <div class="c-label">Application</div>
+                                <div class="c-value">Toolnic</div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="ph-bold ph-envelope"></i>
+                                <div class="c-label">Email</div>
+                                <a href="mailto:tools.toolnic@gmail.com"
+                                    class="c-value">tools.toolnic@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Acceptance -->
+                <div class="tos-section reveal">
+                    <div class="tos-header">
+                        <div class="tos-num">14</div>
+                        <div class="tos-header-text">
+                            <h2>Acceptance</h2>
+                            <span>Acknowledgment of these terms</span>
+                        </div>
+                    </div>
+                    <div class="tos-body">
+                        <div class="highlight-box success-box">
+                            <p
+                                style="margin:0;font-size:14px;color:var(--text-muted)"><i
+                                    class="ph-bold ph-check-circle"
+                                    style="color:#6EE7B7;margin-right:6px;"></i>
+                                By downloading, installing, or using Toolnic,
+                                you acknowledge that you have <strong
+                                    style="color:var(--text)">read, understood,
+                                    and agreed</strong> to these Terms of
+                                Service.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="copyright-banner reveal">
+                    <p>&copy; 2026 <strong>Toolnic</strong>. All Rights
+                        Reserved. Developed by <strong>Sameer
+                            Singh</strong>.</p>
+                </div>
+
+            </div>
+        </main>
+
+        <footer class="page-footer">
+            <div class="container">
+                <p>&copy; 2026 <a href="index.html">Toolnic</a> &middot; <a
+                        href="privacy-policy.html">Privacy Policy</a> &middot;
+                    <a href="delete-account.html">Delete Account</a> &middot; <a
+                        href="mailto:tools.toolnic@gmail.com">tools.toolnic@gmail.com</a></p>
+            </div>
+        </footer>
+
+        <script>
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 30), { passive: true });
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e, i) => { if (e.isIntersecting) { setTimeout(() => e.target.classList.add('visible'), i * 60); io.unobserve(e.target); } });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        </script>
+    </body>
+</html>
