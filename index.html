@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Toolnic – One App. 50+ Powerful Tools.</title>
-        <link rel="icon" href="icon.png">
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-            rel="stylesheet" />
-        <style>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toolnic – One App. 50+ Powerful Tools.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <style>
         /* ══════════════════════════════════════════════════════════════
            RESET & VARIABLES
            ══════════════════════════════════════════════════════════════ */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
         :root {
             --primary: #6366F1;
@@ -50,7 +56,10 @@
             --transition-fast: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+        }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -61,15 +70,27 @@
             position: relative;
         }
 
-        h1, h2, h3, h4, .font-display {
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-display {
             font-family: 'Outfit', sans-serif;
             letter-spacing: -0.03em;
         }
 
-        .font-mono { font-family: 'Space Grotesk', monospace; }
+        .font-mono {
+            font-family: 'Space Grotesk', monospace;
+        }
 
-        a { text-decoration: none; color: inherit; }
-        button { font-family: inherit; }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
 
         .container {
             max-width: 1280px;
@@ -77,7 +98,10 @@
             padding: 0 24px;
         }
 
-        .section-pad { padding: 120px 0; position: relative; }
+        .section-pad {
+            padding: 120px 0;
+            position: relative;
+        }
 
         /* ══════════════════════════════════════════════════════════════
            BACKGROUND EFFECTS
@@ -86,8 +110,8 @@
             position: fixed;
             inset: 0;
             background-image:
-                linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
             background-size: 60px 60px;
             mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
             -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 70%);
@@ -113,36 +137,63 @@
             opacity: 0.4;
             animation: orb-float 20s ease-in-out infinite;
         }
+
         .orb-1 {
-            width: 500px; height: 500px;
-            top: -150px; left: -100px;
+            width: 500px;
+            height: 500px;
+            top: -150px;
+            left: -100px;
             background: radial-gradient(circle, #6366F1, transparent 70%);
         }
+
         .orb-2 {
-            width: 600px; height: 600px;
-            bottom: -200px; right: -150px;
+            width: 600px;
+            height: 600px;
+            bottom: -200px;
+            right: -150px;
             background: radial-gradient(circle, #EC4899, transparent 70%);
             animation-delay: -7s;
         }
+
         .orb-3 {
-            width: 400px; height: 400px;
-            top: 50%; left: 50%;
+            width: 400px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
             background: radial-gradient(circle, #06B6D4, transparent 70%);
             opacity: 0.2;
             animation-delay: -14s;
         }
+
         @keyframes orb-float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(50px, -30px) scale(1.1); }
-            66% { transform: translate(-30px, 40px) scale(0.95); }
+
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            33% {
+                transform: translate(50px, -30px) scale(1.1);
+            }
+
+            66% {
+                transform: translate(-30px, 40px) scale(0.95);
+            }
         }
 
         /* ══════════════════════════════════════════════════════════════
            SCROLLBAR
            ══════════════════════════════════════════════════════════════ */
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg);
+        }
+
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--primary), var(--accent));
             border-radius: 10px;
@@ -165,16 +216,19 @@
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid var(--surface-border);
         }
+
         .navbar.scrolled {
             background: rgba(10, 10, 15, 0.85);
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
         }
+
         .navbar-inner {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 32px;
         }
+
         .logo {
             display: flex;
             align-items: center;
@@ -185,36 +239,34 @@
             letter-spacing: -0.02em;
             flex-shrink: 0;
         }
+
         .logo-mark {
-            width: 42px; height: 42px;
-            border-radius: 12px;
-            background: transparent;
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.35);
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
             position: relative;
             overflow: hidden;
-            flex-shrink: 0;
         }
-        .logo-mark img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-            display: block;
-        }
+
         .logo-mark::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, transparent, rgba(255,255,255,0.25), transparent);
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             transform: translateX(-100%);
             transition: transform 0.6s;
-            z-index: 1;
-            pointer-events: none;
         }
-        .logo:hover .logo-mark::before { transform: translateX(100%); }
+
+        .logo:hover .logo-mark::before {
+            transform: translateX(100%);
+        }
 
         .nav-links {
             display: flex;
@@ -222,6 +274,7 @@
             gap: 8px;
             list-style: none;
         }
+
         .nav-links a {
             font-size: 14px;
             font-weight: 500;
@@ -230,10 +283,12 @@
             border-radius: 100px;
             transition: all var(--transition-fast);
         }
+
         .nav-links a:hover {
             color: var(--text);
             background: var(--surface-hover);
         }
+
         .nav-cta {
             padding: 10px 22px !important;
             background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
@@ -243,6 +298,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .nav-cta::before {
             content: '';
             position: absolute;
@@ -251,8 +307,16 @@
             opacity: 0;
             transition: opacity var(--transition-fast);
         }
-        .nav-cta:hover::before { opacity: 1; }
-        .nav-cta span { position: relative; z-index: 1; }
+
+        .nav-cta:hover::before {
+            opacity: 1;
+        }
+
+        .nav-cta span {
+            position: relative;
+            z-index: 1;
+        }
+
         .nav-cta:hover {
             transform: translateY(-1px);
             box-shadow: 0 8px 30px rgba(99, 102, 241, 0.5);
@@ -267,6 +331,7 @@
             background: none;
             border: none;
         }
+
         .nav-toggle span {
             display: block;
             width: 22px;
@@ -275,9 +340,18 @@
             border-radius: 2px;
             transition: all var(--transition-fast);
         }
-        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .nav-toggle.active span:nth-child(2) { opacity: 0; }
-        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
 
         /* ══════════════════════════════════════════════════════════════
            BUTTONS
@@ -297,11 +371,13 @@
             overflow: hidden;
             white-space: nowrap;
         }
+
         .btn-primary {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: #fff;
             box-shadow: 0 8px 30px rgba(99, 102, 241, 0.35);
         }
+
         .btn-primary::before {
             content: '';
             position: absolute;
@@ -310,12 +386,20 @@
             opacity: 0;
             transition: opacity var(--transition);
         }
-        .btn-primary:hover::before { opacity: 1; }
+
+        .btn-primary:hover::before {
+            opacity: 1;
+        }
+
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 14px 40px rgba(99, 102, 241, 0.5);
         }
-        .btn-primary > * { position: relative; z-index: 1; }
+
+        .btn-primary>* {
+            position: relative;
+            z-index: 1;
+        }
 
         .btn-secondary {
             background: var(--surface);
@@ -323,6 +407,7 @@
             border: 1px solid var(--surface-border);
             backdrop-filter: blur(10px);
         }
+
         .btn-secondary:hover {
             background: var(--surface-hover);
             border-color: var(--surface-border-hover);
@@ -334,7 +419,10 @@
             color: var(--text-muted);
             padding: 10px 18px;
         }
-        .btn-ghost:hover { color: var(--text); }
+
+        .btn-ghost:hover {
+            color: var(--text);
+        }
 
         /* ══════════════════════════════════════════════════════════════
            HERO
@@ -373,21 +461,36 @@
             backdrop-filter: blur(10px);
             animation: fade-up 0.8s ease both;
         }
+
         .hero-badge .dot {
-            width: 8px; height: 8px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: var(--success);
             box-shadow: 0 0 10px var(--success);
             animation: pulse-dot 2s infinite;
         }
+
         .hero-badge .arrow {
             transition: transform var(--transition-fast);
         }
-        .hero-badge:hover .arrow { transform: translateX(3px); }
+
+        .hero-badge:hover .arrow {
+            transform: translateX(3px);
+        }
 
         @keyframes pulse-dot {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(1.2); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
         }
 
         .hero h1 {
@@ -398,7 +501,11 @@
             margin-bottom: 24px;
             animation: fade-up 0.8s 0.1s ease both;
         }
-        .hero h1 .line { display: block; }
+
+        .hero h1 .line {
+            display: block;
+        }
+
         .hero h1 .gradient-text {
             background: linear-gradient(135deg, #818CF8 0%, #EC4899 50%, #F59E0B 100%);
             -webkit-background-clip: text;
@@ -407,9 +514,17 @@
             background-size: 200% 200%;
             animation: gradient-shift 6s ease infinite;
         }
+
         @keyframes gradient-shift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .hero p {
@@ -436,6 +551,7 @@
             border-top: 1px solid var(--surface-border);
             animation: fade-up 0.8s 0.4s ease both;
         }
+
         .hero-stats .stat .number {
             font-family: 'Outfit', sans-serif;
             font-size: 28px;
@@ -445,6 +561,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .hero-stats .stat .label {
             font-size: 13px;
             color: var(--text-dim);
@@ -452,8 +569,15 @@
         }
 
         @keyframes fade-up {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* ══════════════════════════════════════════════════════════════
@@ -469,15 +593,26 @@
 
         .phone-glow {
             position: absolute;
-            width: 400px; height: 400px;
+            width: 400px;
+            height: 400px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
             filter: blur(40px);
             animation: pulse-glow 4s ease-in-out infinite;
         }
+
         @keyframes pulse-glow {
-            0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.2); opacity: 0.9; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.6;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.9;
+            }
         }
 
         .phone-mockup {
@@ -494,11 +629,22 @@
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
             animation: phone-float 6s ease-in-out infinite;
         }
+
         @keyframes phone-float {
-            0%, 100% { transform: translateY(0) rotate(-2deg); }
-            50% { transform: translateY(-15px) rotate(-2deg); }
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-2deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(-2deg);
+            }
         }
-        .phone-mockup:hover { transform: scale(1.03) rotate(-1deg); }
+
+        .phone-mockup:hover {
+            transform: scale(1.03) rotate(-1deg);
+        }
 
         .phone-screen {
             width: 100%;
@@ -508,6 +654,7 @@
             background: linear-gradient(180deg, #0a0a14 0%, #161622 100%);
             position: relative;
         }
+
         .phone-notch {
             position: absolute;
             top: 12px;
@@ -519,6 +666,7 @@
             border-radius: 0 0 16px 16px;
             z-index: 5;
         }
+
         .screen-content {
             padding: 48px 18px 20px;
             width: 100%;
@@ -529,6 +677,7 @@
             color: #fff;
             font-family: 'Outfit', sans-serif;
         }
+
         .status-bar {
             display: flex;
             justify-content: space-between;
@@ -536,12 +685,14 @@
             font-weight: 600;
             opacity: 0.6;
         }
+
         .screen-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 4px 0;
         }
+
         .screen-header .title {
             font-size: 18px;
             font-weight: 700;
@@ -550,16 +701,19 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .screen-header .version {
             font-size: 10px;
             opacity: 0.4;
         }
+
         .tool-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             flex: 1;
         }
+
         .tool-item {
             background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(255, 255, 255, 0.06);
@@ -575,15 +729,18 @@
             gap: 6px;
             color: rgba(255, 255, 255, 0.6);
         }
+
         .tool-item .icon {
             font-size: 20px;
         }
+
         .tool-item.active {
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.2));
             border-color: rgba(99, 102, 241, 0.5);
             color: #fff;
             box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
         }
+
         .bottom-nav {
             display: flex;
             justify-content: space-around;
@@ -611,8 +768,10 @@
             animation: pill-float 5s ease-in-out infinite;
             white-space: nowrap;
         }
+
         .float-pill .icon-circle {
-            width: 28px; height: 28px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -621,25 +780,47 @@
             color: #fff;
             flex-shrink: 0;
         }
+
         .float-pill-1 {
-            top: 15%; left: -10%;
+            top: 15%;
+            left: -10%;
             animation-delay: 0s;
         }
-        .float-pill-1 .icon-circle { background: linear-gradient(135deg, #6366F1, #818CF8); }
+
+        .float-pill-1 .icon-circle {
+            background: linear-gradient(135deg, #6366F1, #818CF8);
+        }
+
         .float-pill-2 {
-            top: 45%; right: -15%;
+            top: 45%;
+            right: -15%;
             animation-delay: -2s;
         }
-        .float-pill-2 .icon-circle { background: linear-gradient(135deg, #EC4899, #F472B6); }
+
+        .float-pill-2 .icon-circle {
+            background: linear-gradient(135deg, #EC4899, #F472B6);
+        }
+
         .float-pill-3 {
-            bottom: 20%; left: -8%;
+            bottom: 20%;
+            left: -8%;
             animation-delay: -4s;
         }
-        .float-pill-3 .icon-circle { background: linear-gradient(135deg, #06B6D4, #22D3EE); }
+
+        .float-pill-3 .icon-circle {
+            background: linear-gradient(135deg, #06B6D4, #22D3EE);
+        }
 
         @keyframes pill-float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
         }
 
         /* ══════════════════════════════════════════════════════════════
@@ -651,6 +832,7 @@
             position: relative;
             z-index: 1;
         }
+
         .trusted-label {
             text-align: center;
             font-size: 12px;
@@ -660,6 +842,7 @@
             letter-spacing: 2px;
             margin-bottom: 28px;
         }
+
         .trusted-logos {
             display: flex;
             justify-content: center;
@@ -668,6 +851,7 @@
             flex-wrap: wrap;
             opacity: 0.5;
         }
+
         .trusted-logo {
             font-family: 'Outfit', sans-serif;
             font-size: 20px;
@@ -676,7 +860,11 @@
             transition: all var(--transition);
             letter-spacing: -0.02em;
         }
-        .trusted-logo:hover { color: var(--text); opacity: 1; }
+
+        .trusted-logo:hover {
+            color: var(--text);
+            opacity: 1;
+        }
 
         /* ══════════════════════════════════════════════════════════════
            SECTION HEADERS
@@ -688,6 +876,7 @@
             position: relative;
             z-index: 1;
         }
+
         .section-label {
             display: inline-flex;
             align-items: center;
@@ -703,11 +892,14 @@
             border: 1px solid rgba(99, 102, 241, 0.2);
             border-radius: 100px;
         }
+
         .section-label .dot {
-            width: 6px; height: 6px;
+            width: 6px;
+            height: 6px;
             border-radius: 50%;
             background: var(--primary-light);
         }
+
         .section-header h2 {
             font-size: clamp(34px, 5vw, 56px);
             font-weight: 700;
@@ -715,12 +907,14 @@
             letter-spacing: -0.03em;
             margin-bottom: 20px;
         }
+
         .section-header h2 .gradient-text {
             background: linear-gradient(135deg, #818CF8, #EC4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .section-header p {
             font-size: 18px;
             color: var(--text-muted);
@@ -739,6 +933,7 @@
             position: relative;
             z-index: 1;
         }
+
         .category-card {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -749,6 +944,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .category-card::before {
             content: '';
             position: absolute;
@@ -758,14 +954,20 @@
             transition: opacity var(--transition);
             pointer-events: none;
         }
-        .category-card:hover::before { opacity: 1; }
+
+        .category-card:hover::before {
+            opacity: 1;
+        }
+
         .category-card:hover {
             transform: translateY(-4px);
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
         }
+
         .category-icon {
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             border-radius: 14px;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.1));
             border: 1px solid rgba(99, 102, 241, 0.3);
@@ -777,14 +979,17 @@
             margin-bottom: 18px;
             transition: all var(--transition);
         }
+
         .category-card:hover .category-icon {
             transform: scale(1.05) rotate(-5deg);
         }
+
         .category-card h4 {
             font-size: 17px;
             font-weight: 600;
             margin-bottom: 6px;
         }
+
         .category-card p {
             font-size: 13px;
             color: var(--text-muted);
@@ -800,6 +1005,7 @@
             position: relative;
             z-index: 1;
         }
+
         .tool-card {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -809,24 +1015,33 @@
             position: relative;
             overflow: hidden;
         }
+
         .tool-card::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--primary-light), transparent);
             opacity: 0;
             transition: opacity var(--transition);
         }
+
         .tool-card:hover {
             transform: translateY(-6px);
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
             box-shadow: var(--shadow-card);
         }
-        .tool-card:hover::before { opacity: 1; }
+
+        .tool-card:hover::before {
+            opacity: 1;
+        }
+
         .tool-card-icon {
-            width: 52px; height: 52px;
+            width: 52px;
+            height: 52px;
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -836,6 +1051,7 @@
             margin-bottom: 18px;
             position: relative;
         }
+
         .tool-card-icon::after {
             content: '';
             position: absolute;
@@ -846,17 +1062,20 @@
             opacity: 0.4;
             z-index: -1;
         }
+
         .tool-card h3 {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 8px;
         }
+
         .tool-card p {
             font-size: 14px;
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 16px;
         }
+
         .tool-tag {
             display: inline-flex;
             align-items: center;
@@ -872,16 +1091,45 @@
             letter-spacing: 0.5px;
         }
 
-        .icon-gradient-1 { background: linear-gradient(135deg, #6366F1, #818CF8); }
-        .icon-gradient-2 { background: linear-gradient(135deg, #06B6D4, #22D3EE); }
-        .icon-gradient-3 { background: linear-gradient(135deg, #10B981, #34D399); }
-        .icon-gradient-4 { background: linear-gradient(135deg, #F59E0B, #FBBF24); }
-        .icon-gradient-5 { background: linear-gradient(135deg, #EC4899, #F472B6); }
-        .icon-gradient-6 { background: linear-gradient(135deg, #8B5CF6, #A78BFA); }
-        .icon-gradient-7 { background: linear-gradient(135deg, #14B8A6, #2DD4BF); }
-        .icon-gradient-8 { background: linear-gradient(135deg, #EF4444, #F87171); }
-        .icon-gradient-9 { background: linear-gradient(135deg, #F97316, #FB923C); }
-        .icon-gradient-10 { background: linear-gradient(135deg, #3B82F6, #60A5FA); }
+        .icon-gradient-1 {
+            background: linear-gradient(135deg, #6366F1, #818CF8);
+        }
+
+        .icon-gradient-2 {
+            background: linear-gradient(135deg, #06B6D4, #22D3EE);
+        }
+
+        .icon-gradient-3 {
+            background: linear-gradient(135deg, #10B981, #34D399);
+        }
+
+        .icon-gradient-4 {
+            background: linear-gradient(135deg, #F59E0B, #FBBF24);
+        }
+
+        .icon-gradient-5 {
+            background: linear-gradient(135deg, #EC4899, #F472B6);
+        }
+
+        .icon-gradient-6 {
+            background: linear-gradient(135deg, #8B5CF6, #A78BFA);
+        }
+
+        .icon-gradient-7 {
+            background: linear-gradient(135deg, #14B8A6, #2DD4BF);
+        }
+
+        .icon-gradient-8 {
+            background: linear-gradient(135deg, #EF4444, #F87171);
+        }
+
+        .icon-gradient-9 {
+            background: linear-gradient(135deg, #F97316, #FB923C);
+        }
+
+        .icon-gradient-10 {
+            background: linear-gradient(135deg, #3B82F6, #60A5FA);
+        }
 
         /* ══════════════════════════════════════════════════════════════
            AI SHOWCASE
@@ -894,11 +1142,13 @@
             position: relative;
             z-index: 1;
         }
+
         .ai-features {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
+
         .ai-feature-item {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -906,22 +1156,26 @@
             padding: 20px;
             transition: all var(--transition);
         }
+
         .ai-feature-item:hover {
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
             transform: translateY(-3px);
         }
+
         .ai-feature-item .icon {
             font-size: 24px;
             display: block;
             margin-bottom: 10px;
             color: var(--primary-light);
         }
+
         .ai-feature-item h4 {
             font-size: 15px;
             font-weight: 600;
             margin-bottom: 4px;
         }
+
         .ai-feature-item p {
             font-size: 13px;
             color: var(--text-muted);
@@ -943,17 +1197,21 @@
             text-align: center;
             backdrop-filter: blur(20px);
         }
+
         .ai-visual::before {
             content: '';
             position: absolute;
-            width: 300px; height: 300px;
+            width: 300px;
+            height: 300px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(99, 102, 241, 0.4), transparent 70%);
             filter: blur(40px);
             animation: pulse-glow 4s ease-in-out infinite;
         }
+
         .ai-visual .ai-icon {
-            width: 80px; height: 80px;
+            width: 80px;
+            height: 80px;
             border-radius: 20px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             display: flex;
@@ -965,6 +1223,7 @@
             z-index: 1;
             box-shadow: 0 10px 40px rgba(99, 102, 241, 0.4);
         }
+
         .ai-visual h3 {
             font-size: 26px;
             font-weight: 700;
@@ -972,7 +1231,8 @@
             position: relative;
             z-index: 1;
         }
-        .ai-visual > p {
+
+        .ai-visual>p {
             color: var(--text-muted);
             font-size: 15px;
             max-width: 340px;
@@ -980,6 +1240,7 @@
             z-index: 1;
             margin-bottom: 20px;
         }
+
         .ai-visual .ai-pills {
             display: flex;
             gap: 8px;
@@ -988,6 +1249,7 @@
             position: relative;
             z-index: 1;
         }
+
         .ai-pill {
             padding: 6px 14px;
             background: rgba(255, 255, 255, 0.08);
@@ -1016,6 +1278,7 @@
             overflow: hidden;
             backdrop-filter: blur(20px);
         }
+
         .waveform-container::before {
             content: '';
             position: absolute;
@@ -1023,11 +1286,13 @@
             background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15), transparent 50%);
             pointer-events: none;
         }
+
         .waveform-info {
             text-align: center;
             position: relative;
             z-index: 1;
         }
+
         .waveform-info .now-playing {
             font-size: 11px;
             color: var(--text-dim);
@@ -1035,15 +1300,18 @@
             letter-spacing: 2px;
             margin-bottom: 6px;
         }
+
         .waveform-info .track-name {
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 4px;
         }
+
         .waveform-info .track-time {
             font-size: 13px;
             color: var(--text-muted);
         }
+
         .waveform {
             display: flex;
             align-items: center;
@@ -1055,6 +1323,7 @@
             position: relative;
             z-index: 1;
         }
+
         .waveform .bar {
             width: 5px;
             background: linear-gradient(180deg, var(--primary-light), var(--accent));
@@ -1062,21 +1331,74 @@
             height: 20px;
             animation: wave 1.2s ease-in-out infinite;
         }
-        .waveform .bar:nth-child(2) { height: 40px; animation-delay: 0.1s; }
-        .waveform .bar:nth-child(3) { height: 60px; animation-delay: 0.2s; }
-        .waveform .bar:nth-child(4) { height: 80px; animation-delay: 0.3s; }
-        .waveform .bar:nth-child(5) { height: 70px; animation-delay: 0.4s; }
-        .waveform .bar:nth-child(6) { height: 50px; animation-delay: 0.5s; }
-        .waveform .bar:nth-child(7) { height: 30px; animation-delay: 0.6s; }
-        .waveform .bar:nth-child(8) { height: 55px; animation-delay: 0.7s; }
-        .waveform .bar:nth-child(9) { height: 75px; animation-delay: 0.8s; }
-        .waveform .bar:nth-child(10) { height: 45px; animation-delay: 0.9s; }
-        .waveform .bar:nth-child(11) { height: 25px; animation-delay: 1.0s; }
-        .waveform .bar:nth-child(12) { height: 65px; animation-delay: 1.1s; }
-        @keyframes wave {
-            0%, 100% { transform: scaleY(0.4); }
-            50% { transform: scaleY(1); }
+
+        .waveform .bar:nth-child(2) {
+            height: 40px;
+            animation-delay: 0.1s;
         }
+
+        .waveform .bar:nth-child(3) {
+            height: 60px;
+            animation-delay: 0.2s;
+        }
+
+        .waveform .bar:nth-child(4) {
+            height: 80px;
+            animation-delay: 0.3s;
+        }
+
+        .waveform .bar:nth-child(5) {
+            height: 70px;
+            animation-delay: 0.4s;
+        }
+
+        .waveform .bar:nth-child(6) {
+            height: 50px;
+            animation-delay: 0.5s;
+        }
+
+        .waveform .bar:nth-child(7) {
+            height: 30px;
+            animation-delay: 0.6s;
+        }
+
+        .waveform .bar:nth-child(8) {
+            height: 55px;
+            animation-delay: 0.7s;
+        }
+
+        .waveform .bar:nth-child(9) {
+            height: 75px;
+            animation-delay: 0.8s;
+        }
+
+        .waveform .bar:nth-child(10) {
+            height: 45px;
+            animation-delay: 0.9s;
+        }
+
+        .waveform .bar:nth-child(11) {
+            height: 25px;
+            animation-delay: 1.0s;
+        }
+
+        .waveform .bar:nth-child(12) {
+            height: 65px;
+            animation-delay: 1.1s;
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: scaleY(0.4);
+            }
+
+            50% {
+                transform: scaleY(1);
+            }
+        }
+
         .waveform-controls {
             display: flex;
             gap: 16px;
@@ -1084,11 +1406,13 @@
             position: relative;
             z-index: 1;
         }
+
         .waveform-controls button {
             background: rgba(255, 255, 255, 0.06);
             border: 1px solid var(--surface-border);
             color: var(--text);
-            width: 44px; height: 44px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             font-size: 18px;
             cursor: pointer;
@@ -1097,21 +1421,26 @@
             align-items: center;
             justify-content: center;
         }
+
         .waveform-controls button:hover {
             background: var(--surface-hover);
             border-color: var(--surface-border-hover);
             transform: scale(1.05);
         }
+
         .waveform-controls .play-btn {
-            width: 60px; height: 60px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             border: none;
             font-size: 24px;
             box-shadow: 0 8px 30px rgba(99, 102, 241, 0.4);
         }
+
         .waveform-controls .play-btn:hover {
             transform: scale(1.08);
         }
+
         .waveform-features {
             display: flex;
             gap: 20px;
@@ -1122,6 +1451,7 @@
             position: relative;
             z-index: 1;
         }
+
         .waveform-features span {
             display: inline-flex;
             align-items: center;
@@ -1139,21 +1469,22 @@
             position: relative;
             z-index: 1;
         }
+
         .speed-gauge-wrap {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         .speed-gauge {
-            width: 280px; height: 280px;
+            width: 280px;
+            height: 280px;
             border-radius: 50%;
-            background: conic-gradient(
-                from 180deg,
-                var(--primary) 0deg,
-                var(--accent) 120deg,
-                var(--secondary) 180deg,
-                rgba(255,255,255,0.05) 180deg
-            );
+            background: conic-gradient(from 180deg,
+                    var(--primary) 0deg,
+                    var(--accent) 120deg,
+                    var(--secondary) 180deg,
+                    rgba(255, 255, 255, 0.05) 180deg);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1161,10 +1492,17 @@
             box-shadow: 0 0 60px rgba(99, 102, 241, 0.3);
             animation: gauge-rotate 20s linear infinite;
         }
+
         @keyframes gauge-rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
         }
+
         .speed-gauge-inner {
             width: 75%;
             aspect-ratio: 1;
@@ -1177,6 +1515,7 @@
             animation: gauge-rotate 20s linear infinite reverse;
             border: 1px solid var(--surface-border);
         }
+
         .speed-gauge-inner .value {
             font-family: 'Outfit', sans-serif;
             font-size: 48px;
@@ -1187,11 +1526,13 @@
             background-clip: text;
             line-height: 1;
         }
+
         .speed-gauge-inner .unit {
             font-size: 13px;
             color: var(--text-muted);
             margin-top: 4px;
         }
+
         .speed-meta {
             display: flex;
             gap: 24px;
@@ -1199,16 +1540,19 @@
             font-size: 13px;
             color: var(--text-muted);
         }
+
         .speed-meta span {
             display: inline-flex;
             align-items: center;
             gap: 6px;
         }
+
         .speed-metrics {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 14px;
         }
+
         .speed-metric {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1217,10 +1561,12 @@
             text-align: center;
             transition: all var(--transition);
         }
+
         .speed-metric:hover {
             border-color: var(--surface-border-hover);
             transform: translateY(-2px);
         }
+
         .speed-metric .label {
             font-size: 11px;
             color: var(--text-dim);
@@ -1228,17 +1574,20 @@
             letter-spacing: 1px;
             margin-bottom: 6px;
         }
+
         .speed-metric .value {
             font-family: 'Outfit', sans-serif;
             font-size: 22px;
             font-weight: 700;
         }
+
         .speed-metric .value.primary {
             background: linear-gradient(135deg, var(--primary-light), #818CF8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .speed-metric .value.secondary {
             background: linear-gradient(135deg, var(--secondary), #22D3EE);
             -webkit-background-clip: text;
@@ -1256,6 +1605,7 @@
             position: relative;
             z-index: 1;
         }
+
         .reminder-card {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1266,13 +1616,16 @@
             position: relative;
             overflow: hidden;
         }
+
         .reminder-card:hover {
             transform: translateY(-4px);
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
         }
+
         .reminder-card .icon {
-            width: 56px; height: 56px;
+            width: 56px;
+            height: 56px;
             border-radius: 16px;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.1));
             border: 1px solid rgba(99, 102, 241, 0.3);
@@ -1284,14 +1637,17 @@
             margin: 0 auto 14px;
             transition: all var(--transition);
         }
+
         .reminder-card:hover .icon {
             transform: scale(1.08) rotate(-5deg);
         }
+
         .reminder-card h4 {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 4px;
         }
+
         .reminder-card p {
             font-size: 13px;
             color: var(--text-muted);
@@ -1307,6 +1663,7 @@
             position: relative;
             z-index: 1;
         }
+
         .invoice-preview {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1314,9 +1671,11 @@
             padding: 32px;
             transition: all var(--transition);
         }
+
         .invoice-preview:hover {
             border-color: var(--surface-border-hover);
         }
+
         .invoice-preview .header {
             display: flex;
             justify-content: space-between;
@@ -1327,6 +1686,7 @@
             flex-wrap: wrap;
             gap: 12px;
         }
+
         .invoice-preview .header h3 {
             font-family: 'Outfit', sans-serif;
             font-weight: 600;
@@ -1335,6 +1695,7 @@
             align-items: center;
             gap: 8px;
         }
+
         .invoice-preview .header .badge {
             padding: 5px 14px;
             background: rgba(16, 185, 129, 0.15);
@@ -1346,6 +1707,7 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
         .invoice-preview .row {
             display: flex;
             justify-content: space-between;
@@ -1353,9 +1715,19 @@
             border-bottom: 1px solid var(--surface-border);
             font-size: 14px;
         }
-        .invoice-preview .row:last-child { border-bottom: none; }
-        .invoice-preview .row .label { color: var(--text-muted); }
-        .invoice-preview .row .value { font-weight: 600; }
+
+        .invoice-preview .row:last-child {
+            border-bottom: none;
+        }
+
+        .invoice-preview .row .label {
+            color: var(--text-muted);
+        }
+
+        .invoice-preview .row .value {
+            font-weight: 600;
+        }
+
         .invoice-preview .total {
             margin-top: 16px;
             padding-top: 16px;
@@ -1365,12 +1737,14 @@
             font-size: 18px;
             font-weight: 700;
         }
+
         .invoice-preview .total .amount {
             background: linear-gradient(135deg, var(--primary-light), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
+
         .invoice-preview .features {
             display: flex;
             gap: 12px;
@@ -1379,6 +1753,7 @@
             color: var(--text-muted);
             flex-wrap: wrap;
         }
+
         .invoice-preview .features span {
             display: inline-flex;
             align-items: center;
@@ -1391,6 +1766,7 @@
             gap: 12px;
             margin-bottom: 16px;
         }
+
         .finance-stat {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--surface-border);
@@ -1398,6 +1774,7 @@
             padding: 16px;
             text-align: center;
         }
+
         .finance-stat .label {
             font-size: 11px;
             color: var(--text-dim);
@@ -1405,14 +1782,17 @@
             letter-spacing: 1px;
             margin-bottom: 4px;
         }
+
         .finance-stat .value {
             font-family: 'Outfit', sans-serif;
             font-size: 22px;
             font-weight: 700;
         }
+
         .finance-stat .value.income {
             color: var(--success);
         }
+
         .finance-stat .value.expense {
             color: var(--danger);
         }
@@ -1427,6 +1807,7 @@
             position: relative;
             z-index: 1;
         }
+
         .calc-chip {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1442,11 +1823,13 @@
             align-items: center;
             gap: 8px;
         }
+
         .calc-chip:hover {
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
             transform: translateY(-3px);
         }
+
         .calc-chip .icon {
             font-size: 22px;
             color: var(--primary-light);
@@ -1462,6 +1845,7 @@
             position: relative;
             z-index: 1;
         }
+
         .other-tool {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1477,11 +1861,13 @@
             align-items: center;
             gap: 6px;
         }
+
         .other-tool:hover {
             border-color: var(--surface-border-hover);
             transform: translateY(-2px);
             background: var(--surface-hover);
         }
+
         .other-tool .icon {
             font-size: 20px;
             color: var(--primary-light);
@@ -1497,6 +1883,7 @@
             position: relative;
             z-index: 1;
         }
+
         .why-item {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1507,13 +1894,16 @@
             position: relative;
             overflow: hidden;
         }
+
         .why-item:hover {
             transform: translateY(-4px);
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
         }
+
         .why-item .icon {
-            width: 56px; height: 56px;
+            width: 56px;
+            height: 56px;
             border-radius: 16px;
             background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.1));
             border: 1px solid rgba(99, 102, 241, 0.3);
@@ -1524,11 +1914,13 @@
             color: var(--primary-light);
             margin: 0 auto 16px;
         }
+
         .why-item h4 {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 6px;
         }
+
         .why-item p {
             font-size: 13px;
             color: var(--text-muted);
@@ -1545,17 +1937,20 @@
             position: relative;
             z-index: 1;
         }
+
         .compare-table {
             width: 100%;
             border-collapse: collapse;
             font-size: 14px;
         }
+
         .compare-table th,
         .compare-table td {
             padding: 18px 24px;
             border-bottom: 1px solid var(--surface-border);
             text-align: left;
         }
+
         .compare-table th {
             background: rgba(255, 255, 255, 0.02);
             font-weight: 600;
@@ -1564,28 +1959,49 @@
             letter-spacing: 1.5px;
             color: var(--text-muted);
         }
-        .compare-table td:first-child { font-weight: 600; }
+
+        .compare-table td:first-child {
+            font-weight: 600;
+        }
+
         .compare-table .highlight-col {
             background: linear-gradient(180deg, rgba(99, 102, 241, 0.08), rgba(236, 72, 153, 0.04));
             position: relative;
         }
+
         .compare-table .highlight-col::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0;
+            top: 0;
+            left: 0;
+            right: 0;
             height: 2px;
             background: linear-gradient(90deg, var(--primary), var(--accent));
         }
+
         .compare-table .highlight-col td {
             background: transparent;
         }
+
         .compare-table .highlight-col th {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: #fff;
         }
-        .compare-table .check { color: var(--success); font-weight: 600; }
-        .compare-table .cross { color: var(--danger); font-weight: 600; }
-        .compare-table .warn { color: var(--warning); font-weight: 600; }
+
+        .compare-table .check {
+            color: var(--success);
+            font-weight: 600;
+        }
+
+        .compare-table .cross {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .compare-table .warn {
+            color: var(--warning);
+            font-weight: 600;
+        }
 
         /* ══════════════════════════════════════════════════════════════
            SCREENSHOTS
@@ -1600,12 +2016,21 @@
             position: relative;
             z-index: 1;
         }
-        .screenshot-carousel::-webkit-scrollbar { height: 6px; }
-        .screenshot-carousel::-webkit-scrollbar-track { background: var(--bg-2); border-radius: 10px; }
+
+        .screenshot-carousel::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .screenshot-carousel::-webkit-scrollbar-track {
+            background: var(--bg-2);
+            border-radius: 10px;
+        }
+
         .screenshot-carousel::-webkit-scrollbar-thumb {
             background: linear-gradient(90deg, var(--primary), var(--accent));
             border-radius: 10px;
         }
+
         .screenshot-card {
             flex: 0 0 220px;
             background: var(--surface);
@@ -1616,10 +2041,12 @@
             transition: all var(--transition);
             text-align: center;
         }
+
         .screenshot-card:hover {
             transform: translateY(-4px);
             border-color: var(--surface-border-hover);
         }
+
         .screenshot-card .mock {
             width: 100%;
             aspect-ratio: 9/19;
@@ -1635,12 +2062,14 @@
             overflow: hidden;
             border: 1px solid var(--surface-border);
         }
+
         .screenshot-card .mock::before {
             content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at 50% 30%, rgba(99, 102, 241, 0.2), transparent 60%);
         }
+
         .screenshot-card .label {
             font-size: 13px;
             font-weight: 500;
@@ -1656,6 +2085,7 @@
             position: relative;
             z-index: 1;
         }
+
         .testimonial-card {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1664,26 +2094,31 @@
             transition: all var(--transition);
             position: relative;
         }
+
         .testimonial-card:hover {
             transform: translateY(-4px);
             border-color: var(--surface-border-hover);
             background: var(--surface-hover);
         }
+
         .testimonial-card .quote-mark {
             position: absolute;
-            top: 20px; right: 24px;
+            top: 20px;
+            right: 24px;
             font-size: 60px;
             font-family: 'Outfit', serif;
             line-height: 1;
             color: var(--primary);
             opacity: 0.15;
         }
+
         .testimonial-card .stars {
             color: var(--warning);
             font-size: 16px;
             letter-spacing: 2px;
             margin-bottom: 14px;
         }
+
         .testimonial-card blockquote {
             font-size: 15px;
             line-height: 1.7;
@@ -1691,13 +2126,16 @@
             position: relative;
             z-index: 1;
         }
+
         .testimonial-card .author {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .testimonial-card .avatar {
-            width: 44px; height: 44px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: #fff;
@@ -1708,8 +2146,17 @@
             font-size: 16px;
             flex-shrink: 0;
         }
-        .testimonial-card .name { font-weight: 600; font-size: 14px; }
-        .testimonial-card .handle { font-size: 12px; color: var(--text-dim); }
+
+        .testimonial-card .name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .testimonial-card .handle {
+            font-size: 12px;
+            color: var(--text-dim);
+        }
+
         .testimonial-card .verified {
             display: inline-flex;
             align-items: center;
@@ -1732,6 +2179,7 @@
             position: relative;
             z-index: 1;
         }
+
         .faq-item {
             background: var(--surface);
             border: 1px solid var(--surface-border);
@@ -1739,9 +2187,11 @@
             overflow: hidden;
             transition: all var(--transition);
         }
+
         .faq-item:hover {
             border-color: var(--surface-border-hover);
         }
+
         .faq-item .question {
             padding: 20px 24px;
             font-weight: 600;
@@ -1759,14 +2209,22 @@
             gap: 16px;
             font-family: inherit;
         }
-        .faq-item .question:hover { color: var(--primary-light); }
+
+        .faq-item .question:hover {
+            color: var(--primary-light);
+        }
+
         .faq-item .question .icon {
             font-size: 18px;
             transition: transform var(--transition);
             flex-shrink: 0;
             color: var(--primary-light);
         }
-        .faq-item .question.open .icon { transform: rotate(180deg); }
+
+        .faq-item .question.open .icon {
+            transform: rotate(180deg);
+        }
+
         .faq-item .answer {
             max-height: 0;
             overflow: hidden;
@@ -1776,6 +2234,7 @@
             font-size: 14px;
             line-height: 1.7;
         }
+
         .faq-item .answer.open {
             max-height: 300px;
             padding: 0 24px 20px;
@@ -1796,39 +2255,52 @@
             backdrop-filter: blur(20px);
             z-index: 1;
         }
+
         .download-section::before {
             content: '';
             position: absolute;
-            width: 500px; height: 500px;
+            width: 500px;
+            height: 500px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(99, 102, 241, 0.3), transparent 70%);
-            top: -200px; right: -100px;
+            top: -200px;
+            right: -100px;
             filter: blur(60px);
             animation: pulse-glow 6s ease-in-out infinite;
         }
+
         .download-section::after {
             content: '';
             position: absolute;
-            width: 400px; height: 400px;
+            width: 400px;
+            height: 400px;
             border-radius: 50%;
             background: radial-gradient(circle, rgba(236, 72, 153, 0.2), transparent 70%);
-            bottom: -150px; left: -100px;
+            bottom: -150px;
+            left: -100px;
             filter: blur(60px);
             animation: pulse-glow 6s ease-in-out infinite reverse;
         }
-        .download-section > * { position: relative; z-index: 1; }
+
+        .download-section>* {
+            position: relative;
+            z-index: 1;
+        }
+
         .download-section h2 {
             font-size: clamp(30px, 4.5vw, 48px);
             font-weight: 700;
             margin-bottom: 16px;
             letter-spacing: -0.03em;
         }
+
         .download-section p {
             font-size: 18px;
             color: var(--text-muted);
             max-width: 520px;
             margin: 0 auto 36px;
         }
+
         .download-badges {
             display: flex;
             gap: 14px;
@@ -1836,6 +2308,7 @@
             flex-wrap: wrap;
             align-items: center;
         }
+
         .download-badge {
             display: inline-flex;
             align-items: center;
@@ -1851,15 +2324,18 @@
             transition: all var(--transition);
             cursor: pointer;
         }
+
         .download-badge:hover {
             background: rgba(255, 255, 255, 0.14);
             transform: translateY(-3px);
             border-color: rgba(255, 255, 255, 0.25);
         }
+
         .download-badge.disabled {
             opacity: 0.5;
             pointer-events: none;
         }
+
         .download-badge .sub {
             font-size: 10px;
             opacity: 0.7;
@@ -1868,124 +2344,130 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        .download-badge .big { font-size: 18px; }
-        .download-badge .icon { font-size: 28px; }
+
+        .download-badge .big {
+            font-size: 18px;
+        }
+
+        .download-badge .icon {
+            font-size: 28px;
+        }
 
         /* ══════════════════════════════════════════════════════════════
            FOOTER
            ══════════════════════════════════════════════════════════════ */
-.footer {
-    background: var(--bg-2);
-    border-top: 1px solid var(--surface-border);
-    padding: 70px 0 30px;
-    position: relative;
-    z-index: 1;
-}
+        .footer {
+            background: var(--bg-2);
+            border-top: 1px solid var(--surface-border);
+            padding: 70px 0 30px;
+            position: relative;
+            z-index: 1;
+        }
 
-.footer-inner {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 60px;
-    align-items: start;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--surface-border);
-}
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--surface-border);
+        }
 
-.footer .logo {
-    color: #fff;
-    font-size: 22px;
-}
+        .footer .logo {
+            color: #fff;
+            font-size: 22px;
+        }
 
-.footer .brand-desc {
-    font-size: 14px;
-    color: var(--text-muted);
-    margin-top: 14px;
-    max-width: 320px;
-    line-height: 1.8;
-}
+        .footer .brand-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 14px;
+            max-width: 320px;
+            line-height: 1.8;
+        }
 
-.footer h4 {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 18px;
-    letter-spacing: .5px;
-}
+        .footer h4 {
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 18px;
+            letter-spacing: .5px;
+        }
 
-.footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-.footer ul li {
-    margin-bottom: 12px;
-}
+        .footer ul li {
+            margin-bottom: 12px;
+        }
 
-.footer ul a {
-    font-size: 14px;
-    color: var(--text-muted);
-    transition: color .3s ease;
-}
+        .footer ul a {
+            font-size: 14px;
+            color: var(--text-muted);
+            transition: color .3s ease;
+        }
 
-.footer ul a:hover {
-    color: var(--primary);
-}
+        .footer ul a:hover {
+            color: var(--primary);
+        }
 
-.footer .social {
-    display: flex;
-    gap: 12px;
-    margin-top: 20px;
-}
+        .footer .social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
 
-.footer .social a {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--surface);
-    border: 1px solid var(--surface-border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    font-size: 18px;
-    transition: .3s ease;
-}
+        .footer .social a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--surface);
+            border: 1px solid var(--surface-border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 18px;
+            transition: .3s ease;
+        }
 
-.footer .social a:hover {
-    background: var(--primary);
-    color: #fff;
-    border-color: var(--primary);
-    transform: translateY(-2px);
-}
+        .footer .social a:hover {
+            background: var(--primary);
+            color: #fff;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 25px;
-    font-size: 13px;
-    color: var(--text-dim);
-}
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            font-size: 13px;
+            color: var(--text-dim);
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .footer {
-        padding: 50px 0 25px;
-    }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer {
+                padding: 50px 0 25px;
+            }
 
-    .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        text-align: center;
-    }
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 35px;
+                text-align: left;
+            }
 
-    .footer .brand-desc {
-        margin: 14px auto 0;
-    }
+            .footer .brand-desc {
+                margin: 14px 0 0;
+            }
 
-    .footer .social {
-        justify-content: center;
-    }
-}
+            .footer .social {
+                justify-content: left;
+            }
+        }
 
         /* ══════════════════════════════════════════════════════════════
            REVEAL ANIMATIONS
@@ -1995,6 +2477,7 @@
             transform: translateY(30px);
             transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -2004,32 +2487,79 @@
            RESPONSIVE
            ══════════════════════════════════════════════════════════════ */
         @media (max-width: 1024px) {
-            .section-pad { padding: 80px 0; }
-            .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 60px; }
-            .hero p { margin-left: auto; margin-right: auto; }
-            .hero-actions { justify-content: center; }
-            .hero-stats { justify-content: center; }
-            .hero-visual { order: -1; }
-            .phone-mockup { width: 260px; height: 540px; }
-            .float-pill { display: none; }
-            .ai-showcase { grid-template-columns: 1fr; }
-            .speed-dashboard { grid-template-columns: 1fr; }
-            .finance-grid { grid-template-columns: 1fr; }
-            .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .section-pad {
+                padding: 80px 0;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 60px;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .phone-mockup {
+                width: 260px;
+                height: 540px;
+            }
+
+            .float-pill {
+                display: none;
+            }
+
+            .ai-showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .speed-dashboard {
+                grid-template-columns: 1fr;
+            }
+
+            .finance-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr 1fr;
+                gap: 32px;
+            }
         }
 
         @media (max-width: 768px) {
-            .section-pad { padding: 60px 0; }
+            .section-pad {
+                padding: 60px 0;
+            }
+
             .navbar {
-                top: 10px; left: 10px; right: 10px;
+                top: 10px;
+                left: 10px;
+                right: 10px;
                 padding: 10px 16px;
             }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
                 position: absolute;
                 top: calc(100% + 10px);
-                left: 0; right: 0;
+                left: 0;
+                right: 0;
                 background: rgba(10, 10, 15, 0.95);
                 backdrop-filter: blur(20px);
                 padding: 20px;
@@ -2038,1160 +2568,1284 @@
                 gap: 8px;
                 align-items: stretch;
             }
-            .nav-links.open { display: flex; }
-            .nav-links a { padding: 12px 16px; }
-            .nav-toggle { display: flex; }
-            .hero { padding-top: 120px; }
-            .hero-inner { text-align: left; }
-            .hero p { margin-left: 0; margin-right: 0; }
-            .hero-actions { justify-content: flex-start; }
-            .hero-stats { gap: 24px; flex-wrap: wrap; justify-content: flex-start; }
-            .hero-visual { display: none; }
-            .section-header { margin-bottom: 48px; }
-            .section-header p { font-size: 16px; }
-            .download-section { padding: 48px 24px; }
-            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
-            .compare-table { font-size: 12px; }
-            .compare-table th, .compare-table td { padding: 14px 12px; }
-            .categories-grid { grid-template-columns: 1fr 1fr; }
-            .ai-features { grid-template-columns: 1fr; }
-            .trusted-logos { gap: 24px; }
-            .trusted-logo { font-size: 16px; }
-            .waveform-container { padding: 32px 20px; }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 12px 16px;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero-inner {
+                text-align: left;
+            }
+
+            .hero p {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            .hero-actions {
+                justify-content: flex-start;
+            }
+
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .section-header {
+                margin-bottom: 48px;
+            }
+
+            .section-header p {
+                font-size: 16px;
+            }
+
+            .download-section {
+                padding: 48px 24px;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .compare-table {
+                font-size: 12px;
+            }
+
+            .compare-table th,
+            .compare-table td {
+                padding: 14px 12px;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .ai-features {
+                grid-template-columns: 1fr;
+            }
+
+            .trusted-logos {
+                gap: 24px;
+            }
+
+            .trusted-logo {
+                font-size: 16px;
+            }
+
+            .waveform-container {
+                padding: 32px 20px;
+            }
         }
 
         @media (max-width: 480px) {
-            .container { padding: 0 16px; }
-            .hero h1 { font-size: 38px; }
-            .btn { padding: 14px 24px; font-size: 14px; }
-            .tools-grid { grid-template-columns: 1fr; }
-            .categories-grid { grid-template-columns: 1fr 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .speed-metrics { grid-template-columns: 1fr 1fr; }
-            .speed-gauge { width: 220px; height: 220px; }
-            .speed-gauge-inner .value { font-size: 36px; }
-            .invoice-preview .header { flex-direction: column; align-items: flex-start; }
-            .compare-table th, .compare-table td { padding: 10px 8px; font-size: 11px; }
-            .calc-grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); }
-            .other-tools-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); }
-            .download-badges { flex-direction: column; align-items: stretch; }
-            .download-badge { justify-content: center; }
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .btn {
+                padding: 14px 24px;
+                font-size: 14px;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speed-metrics {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .speed-gauge {
+                width: 220px;
+                height: 220px;
+            }
+
+            .speed-gauge-inner .value {
+                font-size: 36px;
+            }
+
+            .invoice-preview .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .compare-table th,
+            .compare-table td {
+                padding: 10px 8px;
+                font-size: 11px;
+            }
+
+            .calc-grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            }
+
+            .other-tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .download-badges {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .download-badge {
+                justify-content: center;
+            }
         }
     </style>
-        <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-    <body>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
 
-        <!-- ─── Background Effects ─── -->
-        <div class="bg-grid"></div>
-        <div class="bg-noise"></div>
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
+<body>
 
-        <!-- ─── Navbar ─── -->
-        <header class="navbar" id="navbar">
-            <div class="navbar-inner">
-                <a href="#" class="logo">
-                    <div class="logo-mark">
-                        <img src="icon.png" alt="toolnic">
+    <!-- ─── Background Effects ─── -->
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- ─── Navbar ─── -->
+    <header class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="/" class="logo">
+                <div class="logo-mark">
+                    <img src="icon.png" alt="toolnic">
+                </div>
+                <span>Toolnic</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#ai">AI</a></li>
+                <li><a href="#why">Why Us</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#download" class="nav-cta"><span>Get
+                            App</span></a></li>
+            </ul>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ─── Hero ─── -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-content">
+                <h1>
+                    <span class="line">All In One</span>
+                    <span class="line gradient-text">Utility
+                        Kit.</span>
+                </h1>
+                <p>
+                    Toolnic combines AI, productivity, PDF tools, internet
+                    utilities,
+                    calculators, converters, reminders and smart tools
+                    inside one
+                    beautifully crafted Android app.
+                </p>
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary">
+                        <i class="ph-bold ph-google-play-logo"></i>
+                        <span>Download Free</span>
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="ph-bold ph-play-circle"></i>
+                        <span>Watch Demo</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number">50+</span>
+                        <span class="label">Powerful Tools</span>
                     </div>
-                    <span>Toolnic</span>
-                </a>
-
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#tools">Tools</a></li>
-                    <li><a href="#ai">AI</a></li>
-                    <li><a href="#why">Why Us</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#download" class="nav-cta"><span>Get
-                                App</span></a></li>
-                </ul>
-
-                <button class="nav-toggle" id="navToggle"
-                    aria-label="Toggle menu">
-                    <span></span><span></span><span></span>
-                </button>
+                    <div class="stat">
+                        <span class="number">100K+</span>
+                        <span class="label">Downloads</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">4.9★</span>
+                        <span class="label">User Rating</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">⚡</span>
+                        <span class="label">Fast & Secure</span>
+                    </div>
+                </div>
             </div>
-        </header>
 
-        <!-- ─── Hero ─── -->
-        <section class="hero">
-            <div class="container hero-inner">
-                <div class="hero-content">
-                    <h1>
-                        <span class="line">All In One</span>
-                        <span class="line gradient-text">Utility 
-                            Kit.</span>
-                    </h1>
-                    <p>
-                        Toolnic combines AI, productivity, PDF tools, internet
-                        utilities,
-                        calculators, converters, reminders and smart tools
-                        inside one
-                        beautifully crafted Android app.
+            <div class="hero-visual">
+                <div class="phone-glow"></div>
+
+                <div class="float-pill float-pill-1">
+                    <div class="icon-circle"><i class="ph-bold ph-robot"></i></div>
+                    <span>AI Powered</span>
+                </div>
+                <div class="float-pill float-pill-2">
+                    <div class="icon-circle"><i class="ph-bold ph-lightning"></i></div>
+                    <span>Lightning Fast</span>
+                </div>
+                <div class="float-pill float-pill-3">
+                    <div class="icon-circle"><i class="ph-bold ph-shield-check"></i></div>
+                    <span>Privacy First</span>
+                </div>
+
+                <div class="phone-mockup">
+                    <div class="phone-notch"></div>
+                    <div class="phone-screen">
+                        <div class="screen-content">
+                            <div class="status-bar">
+                                <span>9:41</span>
+                                <span><i class="ph-bold ph-wifi-high"></i>
+                                    <i class="ph-bold ph-battery-full"></i>
+                                    87%</span>
+                            </div>
+                            <div class="screen-header">
+                                <span class="title">Toolnic</span>
+                                <span class="version">v3.2</span>
+                            </div>
+                            <div class="tool-grid" id="toolGrid">
+                                <div class="tool-item active"><span class="icon"><i
+                                            class="ph-bold ph-house"></i></span>Home</div>
+                                <div class="tool-item"><span class="icon"><i class="ph-bold ph-file-pdf"></i></span>PDF
+                                </div>
+                                <div class="tool-item"><span class="icon"><i class="ph-bold ph-robot"></i></span>AI
+                                </div>
+                                <div class="tool-item"><span class="icon"><i class="ph-bold ph-gauge"></i></span>Speed
+                                </div>
+                                <div class="tool-item"><span class="icon"><i
+                                            class="ph-bold ph-receipt"></i></span>Invoice</div>
+                                <div class="tool-item"><span class="icon"><i class="ph-bold ph-bell"></i></span>Remind
+                                </div>
+                                <div class="tool-item"><span class="icon"><i
+                                            class="ph-bold ph-calculator"></i></span>Calc</div>
+                                <div class="tool-item"><span class="icon"><i
+                                            class="ph-bold ph-arrows-clockwise"></i></span>Convert</div>
+                                <div class="tool-item"><span class="icon"><i class="ph-bold ph-moon"></i></span>Dark
+                                </div>
+                            </div>
+                            <div class="bottom-nav">
+                                <span>Tools</span>
+                                <span>Favorites</span>
+                                <span>History</span>
+                                <span>Settings</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Trusted By ─── -->
+    <section class="trusted">
+        <div class="container">
+            <div class="trusted-label">Trusted by 100,000+ users
+                worldwide</div>
+            <div class="trusted-logos">
+                <div class="trusted-logo">◆ ProductHunt</div>
+                <div class="trusted-logo">▲ Vercel</div>
+                <div class="trusted-logo">◉ Figma</div>
+                <div class="trusted-logo">✦ Linear</div>
+                <div class="trusted-logo">◈ Notion</div>
+                <div class="trusted-logo">⬢ Stripe</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Categories ─── -->
+    <section class="section-pad" id="features">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Categories</span>
+                <h2>Everything you need, <span class="gradient-text">beautifully
+                        organized</span></h2>
+                <p>Explore our comprehensive suite of tools, each crafted
+                    for speed, simplicity, and power.</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-robot"></i></div>
+                    <h4>AI
+                        Tools</h4>
+                    <p>Summarize, read, explain</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-file-pdf"></i></div>
+                    <h4>PDF
+                        Tools</h4>
+                    <p>Read, compress, merge</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-globe"></i></div>
+                    <h4>Internet
+                        Tools</h4>
+                    <p>Speed test, IP, network</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-wrench"></i></div>
+                    <h4>Utilities</h4>
+                    <p>Compass,
+                        flashlight, QR</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-trend-up"></i></div>
+                    <h4>Productivity</h4>
+                    <p>Notes,
+                        to-do, calendar</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-calculator"></i></div>
+                    <h4>Calculators</h4>
+                    <p>BMI,
+                        EMI, GST, loan</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-arrows-clockwise"></i></div>
+                    <h4>Converters</h4>
+                    <p>Currency,
+                        unit, time</p>
+                </div>
+                <div class="category-card reveal">
+                    <div class="category-icon"><i class="ph-bold ph-music-note"></i></div>
+                    <h4>Media
+                        Tools</h4>
+                    <p>Compress, convert, OCR</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Tools Grid ─── -->
+    <section class="section-pad" id="tools" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>The
+                    Arsenal</span>
+                <h2>50+ tools. <span class="gradient-text">One
+                        app.</span></h2>
+                <p>Every tool you need, from AI summarization to PDF
+                    editing, speed testing to invoice creation.</p>
+            </div>
+            <div class="tools-grid">
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-1"><i class="ph-bold ph-robot"></i></div>
+                    <h3>AI PDF Summarizer</h3>
+                    <p>Upload any PDF and let AI read, summarize, extract
+                        key points, and even read it aloud.</p>
+                    <span class="tool-tag">AI</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-2"><i class="ph-bold ph-file-pdf"></i></div>
+                    <h3>PDF Reader & Editor</h3>
+                    <p>Open PDFs instantly, search, bookmark, dark mode,
+                        text selection, and read aloud.</p>
+                    <span class="tool-tag">PDF</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-3"><i class="ph-bold ph-gauge"></i></div>
+                    <h3>Internet Speed Test</h3>
+                    <p>Real-time gauge for ping, jitter, download, upload.
+                        History, network type, and public IP.</p>
+                    <span class="tool-tag">Internet</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-4"><i class="ph-bold ph-receipt"></i></div>
+                    <h3>Invoice Maker</h3>
+                    <p>Professional invoices with GST support, PDF export,
+                        QR payment, and customer management.</p>
+                    <span class="tool-tag">Business</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-5"><i class="ph-bold ph-bell"></i></div>
+                    <h3>Smart Reminder</h3>
+                    <p>Voice reminders, water, medicine, custom alarms,
+                        daily notifications with smart intelligence.</p>
+                    <span class="tool-tag">Productivity</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-6"><i class="ph-bold ph-currency-dollar"></i></div>
+                    <h3>Expense Tracker</h3>
+                    <p>Income, expense, charts, categories, monthly reports,
+                        PDF & CSV export, budget planner.</p>
+                    <span class="tool-tag">Finance</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-7"><i class="ph-bold ph-calculator"></i></div>
+                    <h3>BMI Calculator</h3>
+                    <p>Quick BMI, age, EMI, percentage, discount, GST, loan,
+                        date difference, and more.</p>
+                    <span class="tool-tag">Calculator</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-8"><i class="ph-bold ph-compass"></i></div>
+                    <h3>Compass & Flashlight</h3>
+                    <p>Digital compass, flashlight, QR scanner & generator,
+                        barcode scanner, magnifier, mirror.</p>
+                    <span class="tool-tag">Utilities</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-9"><i class="ph-bold ph-arrows-clockwise"></i></div>
+                    <h3>Unit Converter</h3>
+                    <p>Currency, length, weight, temperature, time zones,
+                        fuel cost, electricity bill, SIP.</p>
+                    <span class="tool-tag">Converter</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-10"><i class="ph-bold ph-eye"></i></div>
+                    <h3>OCR & Text-to-Speech</h3>
+                    <p>Extract text from images, read aloud with natural
+                        voices, speed control, and waveform.</p>
+                    <span class="tool-tag">Media</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-1"><i class="ph-bold ph-compress"></i></div>
+                    <h3>Image & Video Compressor</h3>
+                    <p>Compress images, videos, audio, convert formats, zip,
+                        extract, and file management.</p>
+                    <span class="tool-tag">Media</span>
+                </div>
+                <div class="tool-card reveal">
+                    <div class="tool-card-icon icon-gradient-2"><i class="ph-bold ph-lock"></i></div>
+                    <h3>Password Generator</h3>
+                    <p>Secure random passwords, notes, to-do lists,
+                        calendar, random generator, and more.</p>
+                    <span class="tool-tag">Security</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── AI Section ─── -->
+    <section class="section-pad" id="ai">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>AI
+                    Powered</span>
+                <h2>Intelligence <span class="gradient-text">built
+                        in</span></h2>
+                <p>Toolnic's AI engine transforms how you work with
+                    documents, notes, and information.</p>
+            </div>
+            <div class="ai-showcase">
+                <div class="ai-features">
+                    <div class="ai-feature-item reveal">
+                        <i class="ph-bold ph-file-pdf icon"></i>
+                        <h4>AI PDF Summarizer</h4>
+                        <p>Upload PDF, AI reads & extracts key points in
+                            seconds.</p>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <i class="ph-bold ph-speaker-high icon"></i>
+                        <h4>Read Aloud</h4>
+                        <p>Natural voices with speed control &
+                            multi-language support.</p>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <i class="ph-bold ph-note-pencil icon"></i>
+                        <h4>AI Notes</h4>
+                        <p>Smart notes with auto-summarization and
+                            organization.</p>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <i class="ph-bold ph-brain icon"></i>
+                        <h4>AI Explain</h4>
+                        <p>Break down complex topics into simple
+                            explanations.</p>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <i class="ph-bold ph-globe-hemisphere-west icon"></i>
+                        <h4>Multiple Languages</h4>
+                        <p>Supports 20+ languages for summaries and voice
+                            output.</p>
+                    </div>
+                    <div class="ai-feature-item reveal">
+                        <i class="ph-bold ph-lightning icon"></i>
+                        <h4>Large Files</h4>
+                        <p>Handles 100+ page documents with ease and
+                            speed.</p>
+                    </div>
+                </div>
+                <div class="ai-visual reveal">
+                    <div class="ai-icon"><i class="ph-bold ph-robot"></i></div>
+                    <h3>AI PDF Summarizer</h3>
+                    <p>Upload a PDF and let Toolnic's AI read, summarize,
+                        and extract key insights instantly.</p>
+                    <div class="ai-pills">
+                        <span class="ai-pill"><i class="ph-bold ph-file-pdf"></i>
+                            Upload</span>
+                        <span class="ai-pill"><i class="ph-bold ph-lightning"></i> Instant
+                            Summary</span>
+                        <span class="ai-pill"><i class="ph-bold ph-speaker-high"></i> Read
+                            Aloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Read Aloud ─── -->
+    <section class="section-pad" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Read
+                    Aloud</span>
+                <h2>Listen. <span class="gradient-text">Learn.
+                        Multitask.</span></h2>
+                <p>Turn any text or document into a natural, lifelike audio
+                    experience.</p>
+            </div>
+            <div class="waveform-container reveal">
+                <div class="waveform-info">
+                    <div class="now-playing">Now Playing</div>
+                    <div class="track-name"><i class="ph-bold ph-file-pdf"></i>
+                        AI_Summary_Toolnic.pdf</div>
+                    <div class="track-time">2:34 / 8:12</div>
+                </div>
+                <div class="waveform">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="waveform-controls">
+                    <button aria-label="Previous"><i class="ph-bold ph-skip-back"></i></button>
+                    <button class="play-btn" aria-label="Play/Pause" id="playBtn"><i
+                            class="ph-bold ph-play"></i></button>
+                    <button aria-label="Next"><i class="ph-bold ph-skip-forward"></i></button>
+                    <button aria-label="Speed"
+                        style="width:auto;padding:0 16px;font-size:13px;font-weight:600;">1.0×</button>
+                </div>
+                <div class="waveform-features">
+                    <span><i class="ph-bold ph-speaker-high"></i> Natural
+                        voices</span>
+                    <span><i class="ph-bold ph-speedometer"></i> Adjust
+                        speed</span>
+                    <span><i class="ph-bold ph-clock"></i> Background
+                        playback</span>
+                    <span><i class="ph-bold ph-translate"></i> Multiple
+                        languages</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Speed Test ─── -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Speed
+                    Test</span>
+                <h2>Know your <span class="gradient-text">network</span></h2>
+                <p>Real-time speed tests with a beautiful, animated gauge
+                    and detailed metrics.</p>
+            </div>
+            <div class="speed-dashboard">
+                <div class="speed-gauge-wrap reveal">
+                    <div class="speed-gauge">
+                        <div class="speed-gauge-inner">
+                            <span class="value">142</span>
+                            <span class="unit">Mbps</span>
+                        </div>
+                    </div>
+                    <div class="speed-meta">
+                        <span><i class="ph-bold ph-wifi-high"></i> 5G</span>
+                        <span><i class="ph-bold ph-arrows-clockwise"></i>
+                            Ping 12ms</span>
+                        <span><i class="ph-bold ph-chart-line"></i> Jitter
+                            3ms</span>
+                    </div>
+                </div>
+                <div class="speed-metrics reveal">
+                    <div class="speed-metric">
+                        <div class="label">Download</div>
+                        <div class="value primary">142 Mbps</div>
+                    </div>
+                    <div class="speed-metric">
+                        <div class="label">Upload</div>
+                        <div class="value secondary">34 Mbps</div>
+                    </div>
+                    <div class="speed-metric">
+                        <div class="label">Ping</div>
+                        <div class="value">12
+                            ms</div>
+                    </div>
+                    <div class="speed-metric">
+                        <div class="label">Jitter</div>
+                        <div class="value">3
+                            ms</div>
+                    </div>
+                    <div class="speed-metric">
+                        <div class="label">Network</div>
+                        <div class="value">5G</div>
+                    </div>
+                    <div class="speed-metric">
+                        <div class="label">Public
+                            IP</div>
+                        <div class="value" style="font-size:14px;">192.168.1.1</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Reminders ─── -->
+    <section class="section-pad" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Reminders</span>
+                <h2>Never forget <span class="gradient-text">again</span></h2>
+                <p>Smart reminders with voice, water, medicine, and custom
+                    alarms all beautifully designed.</p>
+            </div>
+            <div class="reminder-grid">
+                <div class="reminder-card reveal">
+                    <div class="icon"><i class="ph-bold ph-megaphone"></i></div>
+                    <h4>Voice
+                        Reminder</h4>
+                    <p>Set reminders with your
+                        voice</p>
+                </div>
+                <div class="reminder-card reveal">
+                    <div class="icon"><i class="ph-bold ph-drop"></i></div>
+                    <h4>Water
+                        Reminder</h4>
+                    <p>Stay hydrated with smart
+                        alerts</p>
+                </div>
+                <div class="reminder-card reveal">
+                    <div class="icon"><i class="ph-bold ph-pill"></i></div>
+                    <h4>Medicine
+                        Reminder</h4>
+                    <p>Never miss a dose</p>
+                </div>
+                <div class="reminder-card reveal">
+                    <div class="icon"><i class="ph-bold ph-alarm"></i></div>
+                    <h4>Alarm &
+                        Daily</h4>
+                    <p>Custom alarms and daily
+                        routines</p>
+                </div>
+                <div class="reminder-card reveal">
+                    <div class="icon"><i class="ph-bold ph-bell"></i></div>
+                    <h4>Smart
+                        Notification</h4>
+                    <p>Intelligent, context-aware
+                        alerts</p>
+                </div>
+                <div class="reminder-card reveal">
+                    <div class="icon"><i class="ph-bold ph-clipboard"></i></div>
+                    <h4>Custom
+                        Reminder</h4>
+                    <p>Fully customizable for any
+                        need</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Finance ─── -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Finance</span>
+                <h2>Invoice & expense <span class="gradient-text">made
+                        simple</span></h2>
+                <p>Professional invoicing and expense tracking with
+                    beautiful dashboards and reports.</p>
+            </div>
+            <div class="finance-grid">
+                <div class="invoice-preview reveal">
+                    <div class="header">
+                        <h3><i class="ph-bold ph-receipt"></i> Invoice
+                            #INV-2026-001</h3>
+                        <span class="badge">Paid</span>
+                    </div>
+                    <div class="row"><span class="label">Client</span><span class="value">Acme Corp</span></div>
+                    <div class="row"><span class="label">Date</span><span class="value">June 25, 2026</span></div>
+                    <div class="row"><span class="label">Items</span><span class="value">Design, Dev, QA</span></div>
+                    <div class="row"><span class="label">GST
+                            (18%)</span><span class="value">$108.00</span></div>
+                    <div class="total"><span>Total</span><span class="amount">$708.00</span></div>
+                    <div class="features">
+                        <span><i class="ph-bold ph-file-pdf"></i> PDF
+                            Export</span>
+                        <span><i class="ph-bold ph-qr-code"></i> QR
+                            Payment</span>
+                        <span><i class="ph-bold ph-users"></i> Customer
+                            Mgmt</span>
+                    </div>
+                </div>
+                <div class="invoice-preview reveal">
+                    <div class="header">
+                        <h3><i class="ph-bold ph-currency-dollar"></i>
+                            Expense Tracker</h3>
+                        <span class="badge"
+                            style="background:rgba(99,102,241,0.15);color:var(--primary-light);border-color:rgba(99,102,241,0.3);">This
+                            Month</span>
+                    </div>
+                    <div class="finance-stats">
+                        <div class="finance-stat">
+                            <div class="label">Income</div>
+                            <div class="value income">$4,820</div>
+                        </div>
+                        <div class="finance-stat">
+                            <div class="label">Expense</div>
+                            <div class="value expense">$2,340</div>
+                        </div>
+                    </div>
+                    <div class="features">
+                        <span><i class="ph-bold ph-chart-bar"></i>
+                            Charts</span>
+                        <span><i class="ph-bold ph-folder"></i>
+                            Categories</span>
+                        <span><i class="ph-bold ph-file-pdf"></i> PDF
+                            Export</span>
+                        <span><i class="ph-bold ph-file-csv"></i> CSV
+                            Export</span>
+                        <span><i class="ph-bold ph-chart-line"></i> Budget
+                            Planner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Calculators ─── -->
+    <section class="section-pad" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Calculators</span>
+                <h2>Calculate <span class="gradient-text">everything</span></h2>
+                <p>From BMI to EMI, GST to SIP all the calculators you need
+                    in one place.</p>
+            </div>
+            <div class="calc-grid">
+                <div class="calc-chip reveal"><i class="ph-bold ph-scales icon"></i>BMI</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-cake icon"></i>Age</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-bank icon"></i>EMI</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-percent icon"></i>Percentage</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-tag icon"></i>Discount</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-receipt icon"></i>GST</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-money icon"></i>Loan</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-calendar icon"></i>Date Diff</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-microscope icon"></i>Scientific</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-ruler icon"></i>Unit</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-currency-dollar icon"></i>Currency</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-globe-hemisphere-west icon"></i>Time
+                    Zone</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-hand-coins icon"></i>Tip</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-gas-pump icon"></i>Fuel Cost</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-lightbulb icon"></i>Electricity</div>
+                <div class="calc-chip reveal"><i class="ph-bold ph-trend-up icon"></i>SIP</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Other Tools ─── -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>More
+                    Tools</span>
+                <h2>And <span class="gradient-text">many more…</span></h2>
+                <p>Every utility you can imagine, packed into one beautiful
+                    app.</p>
+            </div>
+            <div class="other-tools-grid">
+                <div class="other-tool reveal"><i class="ph-bold ph-compass icon"></i>Compass</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-flashlight icon"></i>Flashlight</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-camera icon"></i>QR Scanner</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-image icon"></i>QR Generator</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-barcode icon"></i>Barcode</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-magnifying-glass icon"></i>Magnifier</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-frame-corners icon"></i>Mirror</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-palette icon"></i>Color
+                    Picker</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-file-image icon"></i>OCR</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-speaker-high icon"></i>TTS</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-microphone icon"></i>STT</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-clock icon"></i>Stopwatch</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-timer icon"></i>Timer</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-globe-hemisphere-east icon"></i>World
+                    Clock</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-lock icon"></i>Password</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-note-pencil icon"></i>Notes</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-check-square-offset icon"></i>To-Do</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-calendar-blank icon"></i>Calendar</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-dice icon"></i>Random</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-compress icon"></i>Img
+                    Compress</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-film-strip icon"></i>Video
+                    Compress</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-music-note icon"></i>Audio
+                    Convert</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-archive icon"></i>Zip
+                    Extract</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-archive icon"></i>Zip Create</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-file-image icon"></i>Img to
+                    PDF</div>
+                <div class="other-tool reveal"><i class="ph-bold ph-file-pdf icon"></i>PDF to
+                    Img</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Why Toolnic ─── -->
+    <section class="section-pad" id="why" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Why
+                    Toolnic</span>
+                <h2>One app instead of <span class="gradient-text">dozens</span></h2>
+                <p>Beautiful, fast, private, and packed with intelligence.
+                    Here's why Toolnic is different.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-palette"></i></div>
+                    <h4>Beautiful
+                        UI</h4>
+                    <p>Designed with care, every pixel
+                        matters.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-lightning"></i></div>
+                    <h4>Fast
+                        Performance</h4>
+                    <p>Optimized for speed and
+                        responsiveness.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-hard-drives"></i></div>
+                    <h4>Small
+                        App Size</h4>
+                    <p>Lightweight, doesn't waste your
+                        storage.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-arrows-clockwise"></i></div>
+                    <h4>Regular
+                        Updates</h4>
+                    <p>New tools and features added
+                        constantly.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-shield-check"></i></div>
+                    <h4>Privacy
+                        Focused</h4>
+                    <p>Your data stays yours.
+                        Always.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-wifi-slash"></i></div>
+                    <h4>Offline
+                        Tools</h4>
+                    <p>Many tools work without
+                        internet.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-robot"></i></div>
+                    <h4>AI
+                        Powered</h4>
+                    <p>Intelligent features built right
+                        in.</p>
+                </div>
+                <div class="why-item reveal">
+                    <div class="icon"><i class="ph-bold ph-star"></i></div>
+                    <h4>Premium
+                        Experience</h4>
+                    <p>Feels like a flagship
+                        product.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Comparison ─── -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label"><span class="dot"></span>Comparison</span>
+                <h2>Toolnic vs. <span class="gradient-text">multiple
+                        apps</span></h2>
+                <p>See how Toolnic stacks up against the fragmented app
+                    ecosystem.</p>
+            </div>
+            <div class="compare-wrapper reveal">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th class="highlight-col">Toolnic</th>
+                            <th>Multiple Apps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Storage</td>
+                            <td class="highlight-col"><span class="check">✓</span> Very Low (One
+                                app)</td>
+                            <td><span class="cross">✕</span>
+                                High (10+ apps)</td>
+                        </tr>
+                        <tr>
+                            <td>Performance</td>
+                            <td class="highlight-col"><span class="check">✓</span> Optimized &
+                                fast</td>
+                            <td><span class="cross">✕</span>
+                                Inconsistent</td>
+                        </tr>
+                        <tr>
+                            <td>Features</td>
+                            <td class="highlight-col"><span class="check">✓</span> 50+ in one
+                                place</td>
+                            <td><span class="warn">~</span>
+                                Spread across many</td>
+                        </tr>
+                        <tr>
+                            <td>AI</td>
+                            <td class="highlight-col"><span class="check">✓</span>
+                                Built-in</td>
+                            <td><span class="cross">✕</span> Extra cost or
+                                missing</td>
+                        </tr>
+                        <tr>
+                            <td>Ads</td>
+                            <td class="highlight-col"><span class="check">✓</span>
+                                Non-intrusive</td>
+                            <td><span class="cross">✕</span> Full-screen
+                                pop-ups</td>
+                        </tr>
+                        <tr>
+                            <td>Offline</td>
+                            <td class="highlight-col"><span class="check">✓</span> Many tools
+                                offline</td>
+                            <td><span class="warn">~</span>
+                                Depends on app</td>
+                        </tr>
+                        <tr>
+                            <td>Design</td>
+                            <td class="highlight-col"><span class="check">✓</span> Modern &
+                                cohesive</td>
+                            <td><span class="cross">✕</span> Outdated &
+                                inconsistent</td>
+                        </tr>
+                        <tr>
+                            <td>Privacy</td>
+                            <td class="highlight-col"><span class="check">✓</span>
+                                Privacy-first</td>
+                            <td><span class="warn">~</span> Often
+                                data-hungry</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Testimonials ─── -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Loved by <span class="gradient-text">thousands</span></h2>
+                <p>Real feedback from real users who made the switch to
+                    Toolnic.</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <span class="quote-mark">"</span>
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"Toolnic replaced 14 apps on my phone. The AI summarizer alone is worth the download."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">JD</div>
+                        <div>
+                            <div class="name">John D.</div>
+                            <div class="handle">@johndev</div>
+                            <span class="verified"><i class="ph-bold ph-seal-check"></i>
+                                Verified</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <span class="quote-mark">"</span>
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"The speed test is incredibly accurate and the UI is just gorgeous. Best utility app on
+                        Android."</blockquote>
+                    <div class="author">
+                        <div class="avatar">SM</div>
+                        <div>
+                            <div class="name">Sarah M.</div>
+                            <div class="handle">@sarahm</div>
+                            <span class="verified"><i class="ph-bold ph-seal-check"></i>
+                                Verified</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <span class="quote-mark">"</span>
+                    <div class="stars">★★★★★</div>
+                    <blockquote>"I use it daily for PDFs, reminders, and conversions. It's become an essential part of
+                        my workflow."</blockquote>
+                    <div class="author">
+                        <div class="avatar">AR</div>
+                        <div>
+                            <div class="name">Alex R.</div>
+                            <div class="handle">@alexr</div>
+                            <span class="verified"><i class="ph-bold ph-seal-check"></i>
+                                Verified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FAQ ─── -->
+    <section class="section-pad" id="faq" style="background: var(--bg-2);">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2>Frequently asked <span class="gradient-text">questions</span></h2>
+                <p>Everything you need to know about Toolnic.</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal"><button class="question">What
+                        is Toolnic?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Toolnic is an all-in-one Android
+                        utility app that combines 50+ powerful tools into a
+                        single, beautifully designed experience. From AI
+                        summarization to PDF editing, speed testing to
+                        invoice creation it's the ultimate digital
+                        toolbox.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Is
+                        Toolnic free?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Yes, Toolnic is free to download and
+                        use. We believe powerful tools should be accessible
+                        to everyone. Some advanced AI features may have
+                        usage limits, but the core experience is completely
+                        free.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Does
+                        Toolnic work offline?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Many tools work completely offline,
+                        including the compass, flashlight, QR scanner,
+                        calculators, converters, and PDF reader. AI features
+                        and speed tests require an internet
+                        connection.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">How
+                        does the AI PDF Summarizer work?<span class="icon"><i
+                                class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Upload any PDF document to Toolnic,
+                        and our AI engine will analyze the content, extract
+                        key information, and generate a concise summary. It
+                        also supports read-aloud functionality with natural
+                        voices.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Is my
+                        data safe with Toolnic?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Absolutely. Toolnic is built with
+                        privacy as a core principle. We don't collect
+                        unnecessary data, and all processing is done
+                        securely. Your documents and personal information
+                        never leave your device without your explicit
+                        consent.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Can I
+                        open PDFs from my file manager?<span class="icon"><i
+                                class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Yes! Toolnic integrates with
+                        Android's file system. Simply tap any PDF in your
+                        file manager and choose Toolnic as the app to open
+                        it. The PDF reader will launch instantly with full
+                        functionality.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">What
+                        languages does Toolnic support?<span class="icon"><i
+                                class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Toolnic supports 20+ languages for
+                        the UI, AI summaries, and text-to-speech. The app
+                        automatically detects your device language and
+                        adapts accordingly.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">How
+                        often is Toolnic updated?<span class="icon"><i
+                                class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">We release updates every 2-4 weeks
+                        with new tools, improvements, and bug fixes. We're
+                        constantly adding new features based on user
+                        feedback.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Does
+                        Toolnic contain ads?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Toolnic is ad-supported but we keep
+                        ads non-intrusive and respectful of your experience.
+                        No full-screen pop-ups or interruptive ads. We
+                        believe in putting the user first.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">What
+                        permissions does Toolnic need?<span class="icon"><i
+                                class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Toolnic only asks for permissions it
+                        actually needs storage access for documents, camera
+                        for QR scanning, and microphone for voice reminders.
+                        No unnecessary permissions are
+                        requested.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Can I
+                        use Toolnic on tablet?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Yes! Toolnic is fully optimized for
+                        tablets with a responsive layout that adapts to
+                        larger screens. The experience is just as polished
+                        on tablets as on phones.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Is
+                        there a dark mode?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Yes, Toolnic features a beautiful
+                        dark mode that's easy on the eyes. It automatically
+                        follows your system theme, or you can toggle it
+                        manually in settings.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">How do
+                        I contact support?<span class="icon"><i class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">You can reach our support team via
+                        email at support@toolnic.app, or through the in-app
+                        feedback system. We typically respond within 24
+                        hours.</div>
+                </div>
+                <div class="faq-item reveal"><button class="question">Is
+                        Toolnic available on iOS?<span class="icon"><i
+                                class="ph-bold ph-caret-down"></i></span></button>
+                    <div class="answer">Currently, Toolnic is available
+                        exclusively on Android. We're exploring an iOS
+                        version for the future.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Download CTA ─── -->
+    <section class="section-pad" id="download">
+        <div class="container">
+            <div class="download-section reveal">
+                <h2>Ready to simplify your digital life?</h2>
+                <p>Download Toolnic today and experience the power of 50+
+                    tools in one beautiful app.</p>
+                <div class="download-badges">
+                    <a href="#" class="download-badge">
+                        <span class="icon"><i class="ph-bold ph-google-play-logo"></i></span>
+                        <span>
+                            <span class="sub">Get it on</span>
+                            <span class="big">Google Play</span>
+                        </span>
+                    </a>
+                    <a href="#" class="download-badge disabled">
+                        <span class="icon"><i class="ph-bold ph-apple-logo"></i></span>
+                        <span>
+                            <span class="sub">Coming soon</span>
+                            <span class="big">App Store</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── Footer ─── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+
+                <!-- Brand -->
+                <div>
+                    <a href="/" class="logo">
+                        <div class="logo-mark">
+                            <img src="icon.png" alt="Toolnic">
+                        </div>
+                        <span>Toolnic</span>
+                    </a>
+
+                    <p class="brand-desc">
+                        All-in-One Productivity App for Android.
                     </p>
-                    <div class="hero-actions">
-                        <a href="#download" class="btn btn-primary">
-                            <i class="ph-bold ph-google-play-logo"></i>
-                            <span>Download Free</span>
-                        </a>
-                        <a href="#features" class="btn btn-secondary">
-                            <i class="ph-bold ph-play-circle"></i>
-                            <span>Watch Demo</span>
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <span class="number">50+</span>
-                            <span class="label">Powerful Tools</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number">100K+</span>
-                            <span class="label">Downloads</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number">4.9★</span>
-                            <span class="label">User Rating</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number">⚡</span>
-                            <span class="label">Fast & Secure</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="hero-visual">
-                    <div class="phone-glow"></div>
+                    <p style="margin-top:15px;font-weight:600;">
+                        Developed by Sameer Singh
+                    </p>
 
-                    <div class="float-pill float-pill-1">
-                        <div class="icon-circle"><i
-                                class="ph-bold ph-robot"></i></div>
-                        <span>AI Powered</span>
-                    </div>
-                    <div class="float-pill float-pill-2">
-                        <div class="icon-circle"><i
-                                class="ph-bold ph-lightning"></i></div>
-                        <span>Lightning Fast</span>
-                    </div>
-                    <div class="float-pill float-pill-3">
-                        <div class="icon-circle"><i
-                                class="ph-bold ph-shield-check"></i></div>
-                        <span>Privacy First</span>
-                    </div>
-
-                    <div class="phone-mockup">
-                        <div class="phone-notch"></div>
-                        <div class="phone-screen">
-                            <div class="screen-content">
-                                <div class="status-bar">
-                                    <span>9:41</span>
-                                    <span><i class="ph-bold ph-wifi-high"></i>
-                                        <i class="ph-bold ph-battery-full"></i>
-                                        87%</span>
-                                </div>
-                                <div class="screen-header">
-                                    <span class="title">Toolnic</span>
-                                    <span class="version">v3.2</span>
-                                </div>
-                                <div class="tool-grid" id="toolGrid">
-                                    <div class="tool-item active"><span
-                                            class="icon"><i
-                                                class="ph-bold ph-house"></i></span>Home</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-file-pdf"></i></span>PDF</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-robot"></i></span>AI</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-gauge"></i></span>Speed</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-receipt"></i></span>Invoice</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-bell"></i></span>Remind</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-calculator"></i></span>Calc</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-arrows-clockwise"></i></span>Convert</div>
-                                    <div class="tool-item"><span class="icon"><i
-                                                class="ph-bold ph-moon"></i></span>Dark</div>
-                                </div>
-                                <div class="bottom-nav">
-                                    <span>Tools</span>
-                                    <span>Favorites</span>
-                                    <span>History</span>
-                                    <span>Settings</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Trusted By ─── -->
-        <section class="trusted">
-            <div class="container">
-                <div class="trusted-label">Trusted by 100,000+ users
-                    worldwide</div>
-                <div class="trusted-logos">
-                    <div class="trusted-logo">◆ ProductHunt</div>
-                    <div class="trusted-logo">▲ Vercel</div>
-                    <div class="trusted-logo">◉ Figma</div>
-                    <div class="trusted-logo">✦ Linear</div>
-                    <div class="trusted-logo">◈ Notion</div>
-                    <div class="trusted-logo">⬢ Stripe</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Categories ─── -->
-        <section class="section-pad" id="features">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span
-                            class="dot"></span>Categories</span>
-                    <h2>Everything you need, <span
-                            class="gradient-text">beautifully
-                            organized</span></h2>
-                    <p>Explore our comprehensive suite of tools, each crafted
-                        for speed, simplicity, and power.</p>
-                </div>
-                <div class="categories-grid">
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-robot"></i></div><h4>AI
-                            Tools</h4><p>Summarize, read, explain</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-file-pdf"></i></div><h4>PDF
-                            Tools</h4><p>Read, compress, merge</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-globe"></i></div><h4>Internet
-                            Tools</h4><p>Speed test, IP, network</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-wrench"></i></div><h4>Utilities</h4><p>Compass,
-                            flashlight, QR</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-trend-up"></i></div><h4>Productivity</h4><p>Notes,
-                            to-do, calendar</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-calculator"></i></div><h4>Calculators</h4><p>BMI,
-                            EMI, GST, loan</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-arrows-clockwise"></i></div><h4>Converters</h4><p>Currency,
-                            unit, time</p></div>
-                    <div class="category-card reveal"><div
-                            class="category-icon"><i
-                                class="ph-bold ph-music-note"></i></div><h4>Media
-                            Tools</h4><p>Compress, convert, OCR</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Tools Grid ─── -->
-        <section class="section-pad" id="tools"
-            style="background: var(--bg-2);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span class="dot"></span>The
-                        Arsenal</span>
-                    <h2>50+ tools. <span class="gradient-text">One
-                            app.</span></h2>
-                    <p>Every tool you need, from AI summarization to PDF
-                        editing, speed testing to invoice creation.</p>
-                </div>
-                <div class="tools-grid">
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-1"><i
-                                class="ph-bold ph-robot"></i></div>
-                        <h3>AI PDF Summarizer</h3>
-                        <p>Upload any PDF and let AI read, summarize, extract
-                            key points, and even read it aloud.</p>
-                        <span class="tool-tag">AI</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-2"><i
-                                class="ph-bold ph-file-pdf"></i></div>
-                        <h3>PDF Reader & Editor</h3>
-                        <p>Open PDFs instantly, search, bookmark, dark mode,
-                            text selection, and read aloud.</p>
-                        <span class="tool-tag">PDF</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-3"><i
-                                class="ph-bold ph-gauge"></i></div>
-                        <h3>Internet Speed Test</h3>
-                        <p>Real-time gauge for ping, jitter, download, upload.
-                            History, network type, and public IP.</p>
-                        <span class="tool-tag">Internet</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-4"><i
-                                class="ph-bold ph-receipt"></i></div>
-                        <h3>Invoice Maker</h3>
-                        <p>Professional invoices with GST support, PDF export,
-                            QR payment, and customer management.</p>
-                        <span class="tool-tag">Business</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-5"><i
-                                class="ph-bold ph-bell"></i></div>
-                        <h3>Smart Reminder</h3>
-                        <p>Voice reminders, water, medicine, custom alarms,
-                            daily notifications with smart intelligence.</p>
-                        <span class="tool-tag">Productivity</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-6"><i
-                                class="ph-bold ph-currency-dollar"></i></div>
-                        <h3>Expense Tracker</h3>
-                        <p>Income, expense, charts, categories, monthly reports,
-                            PDF & CSV export, budget planner.</p>
-                        <span class="tool-tag">Finance</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-7"><i
-                                class="ph-bold ph-calculator"></i></div>
-                        <h3>BMI Calculator</h3>
-                        <p>Quick BMI, age, EMI, percentage, discount, GST, loan,
-                            date difference, and more.</p>
-                        <span class="tool-tag">Calculator</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-8"><i
-                                class="ph-bold ph-compass"></i></div>
-                        <h3>Compass & Flashlight</h3>
-                        <p>Digital compass, flashlight, QR scanner & generator,
-                            barcode scanner, magnifier, mirror.</p>
-                        <span class="tool-tag">Utilities</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-9"><i
-                                class="ph-bold ph-arrows-clockwise"></i></div>
-                        <h3>Unit Converter</h3>
-                        <p>Currency, length, weight, temperature, time zones,
-                            fuel cost, electricity bill, SIP.</p>
-                        <span class="tool-tag">Converter</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-10"><i
-                                class="ph-bold ph-eye"></i></div>
-                        <h3>OCR & Text-to-Speech</h3>
-                        <p>Extract text from images, read aloud with natural
-                            voices, speed control, and waveform.</p>
-                        <span class="tool-tag">Media</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-1"><i
-                                class="ph-bold ph-compress"></i></div>
-                        <h3>Image & Video Compressor</h3>
-                        <p>Compress images, videos, audio, convert formats, zip,
-                            extract, and file management.</p>
-                        <span class="tool-tag">Media</span>
-                    </div>
-                    <div class="tool-card reveal">
-                        <div class="tool-card-icon icon-gradient-2"><i
-                                class="ph-bold ph-lock"></i></div>
-                        <h3>Password Generator</h3>
-                        <p>Secure random passwords, notes, to-do lists,
-                            calendar, random generator, and more.</p>
-                        <span class="tool-tag">Security</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── AI Section ─── -->
-        <section class="section-pad" id="ai">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span class="dot"></span>AI
-                        Powered</span>
-                    <h2>Intelligence <span class="gradient-text">built
-                            in</span></h2>
-                    <p>Toolnic's AI engine transforms how you work with
-                        documents, notes, and information.</p>
-                </div>
-                <div class="ai-showcase">
-                    <div class="ai-features">
-                        <div class="ai-feature-item reveal">
-                            <i class="ph-bold ph-file-pdf icon"></i>
-                            <h4>AI PDF Summarizer</h4>
-                            <p>Upload PDF, AI reads & extracts key points in
-                                seconds.</p>
-                        </div>
-                        <div class="ai-feature-item reveal">
-                            <i class="ph-bold ph-speaker-high icon"></i>
-                            <h4>Read Aloud</h4>
-                            <p>Natural voices with speed control &
-                                multi-language support.</p>
-                        </div>
-                        <div class="ai-feature-item reveal">
-                            <i class="ph-bold ph-note-pencil icon"></i>
-                            <h4>AI Notes</h4>
-                            <p>Smart notes with auto-summarization and
-                                organization.</p>
-                        </div>
-                        <div class="ai-feature-item reveal">
-                            <i class="ph-bold ph-brain icon"></i>
-                            <h4>AI Explain</h4>
-                            <p>Break down complex topics into simple
-                                explanations.</p>
-                        </div>
-                        <div class="ai-feature-item reveal">
-                            <i
-                                class="ph-bold ph-globe-hemisphere-west icon"></i>
-                            <h4>Multiple Languages</h4>
-                            <p>Supports 20+ languages for summaries and voice
-                                output.</p>
-                        </div>
-                        <div class="ai-feature-item reveal">
-                            <i class="ph-bold ph-lightning icon"></i>
-                            <h4>Large Files</h4>
-                            <p>Handles 100+ page documents with ease and
-                                speed.</p>
-                        </div>
-                    </div>
-                    <div class="ai-visual reveal">
-                        <div class="ai-icon"><i
-                                class="ph-bold ph-robot"></i></div>
-                        <h3>AI PDF Summarizer</h3>
-                        <p>Upload a PDF and let Toolnic's AI read, summarize,
-                            and extract key insights instantly.</p>
-                        <div class="ai-pills">
-                            <span class="ai-pill"><i
-                                    class="ph-bold ph-file-pdf"></i>
-                                Upload</span>
-                            <span class="ai-pill"><i
-                                    class="ph-bold ph-lightning"></i> Instant
-                                Summary</span>
-                            <span class="ai-pill"><i
-                                    class="ph-bold ph-speaker-high"></i> Read
-                                Aloud</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Read Aloud ─── -->
-        <section class="section-pad" style="background: var(--bg-2);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span class="dot"></span>Read
-                        Aloud</span>
-                    <h2>Listen. <span class="gradient-text">Learn.
-                            Multitask.</span></h2>
-                    <p>Turn any text or document into a natural, lifelike audio
-                        experience.</p>
-                </div>
-                <div class="waveform-container reveal">
-                    <div class="waveform-info">
-                        <div class="now-playing">Now Playing</div>
-                        <div class="track-name"><i
-                                class="ph-bold ph-file-pdf"></i>
-                            AI_Summary_Toolnic.pdf</div>
-                        <div class="track-time">2:34 / 8:12</div>
-                    </div>
-                    <div class="waveform">
-                        <div class="bar"></div><div class="bar"></div><div
-                            class="bar"></div><div class="bar"></div>
-                        <div class="bar"></div><div class="bar"></div><div
-                            class="bar"></div><div class="bar"></div>
-                        <div class="bar"></div><div class="bar"></div><div
-                            class="bar"></div><div class="bar"></div>
-                    </div>
-                    <div class="waveform-controls">
-                        <button aria-label="Previous"><i
-                                class="ph-bold ph-skip-back"></i></button>
-                        <button class="play-btn" aria-label="Play/Pause"
-                            id="playBtn"><i
-                                class="ph-bold ph-play"></i></button>
-                        <button aria-label="Next"><i
-                                class="ph-bold ph-skip-forward"></i></button>
-                        <button aria-label="Speed"
-                            style="width:auto;padding:0 16px;font-size:13px;font-weight:600;">1.0×</button>
-                    </div>
-                    <div class="waveform-features">
-                        <span><i class="ph-bold ph-speaker-high"></i> Natural
-                            voices</span>
-                        <span><i class="ph-bold ph-speedometer"></i> Adjust
-                            speed</span>
-                        <span><i class="ph-bold ph-clock"></i> Background
-                            playback</span>
-                        <span><i class="ph-bold ph-translate"></i> Multiple
-                            languages</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Speed Test ─── -->
-        <section class="section-pad">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span class="dot"></span>Speed
-                        Test</span>
-                    <h2>Know your <span
-                            class="gradient-text">network</span></h2>
-                    <p>Real-time speed tests with a beautiful, animated gauge
-                        and detailed metrics.</p>
-                </div>
-                <div class="speed-dashboard">
-                    <div class="speed-gauge-wrap reveal">
-                        <div class="speed-gauge">
-                            <div class="speed-gauge-inner">
-                                <span class="value">142</span>
-                                <span class="unit">Mbps</span>
-                            </div>
-                        </div>
-                        <div class="speed-meta">
-                            <span><i class="ph-bold ph-wifi-high"></i> 5G</span>
-                            <span><i class="ph-bold ph-arrows-clockwise"></i>
-                                Ping 12ms</span>
-                            <span><i class="ph-bold ph-chart-line"></i> Jitter
-                                3ms</span>
-                        </div>
-                    </div>
-                    <div class="speed-metrics reveal">
-                        <div class="speed-metric"><div
-                                class="label">Download</div><div
-                                class="value primary">142 Mbps</div></div>
-                        <div class="speed-metric"><div
-                                class="label">Upload</div><div
-                                class="value secondary">34 Mbps</div></div>
-                        <div class="speed-metric"><div
-                                class="label">Ping</div><div class="value">12
-                                ms</div></div>
-                        <div class="speed-metric"><div
-                                class="label">Jitter</div><div class="value">3
-                                ms</div></div>
-                        <div class="speed-metric"><div
-                                class="label">Network</div><div
-                                class="value">5G</div></div>
-                        <div class="speed-metric"><div class="label">Public
-                                IP</div><div class="value"
-                                style="font-size:14px;">192.168.1.1</div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Reminders ─── -->
-        <section class="section-pad" style="background: var(--bg-2);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span
-                            class="dot"></span>Reminders</span>
-                    <h2>Never forget <span
-                            class="gradient-text">again</span></h2>
-                    <p>Smart reminders with voice, water, medicine, and custom
-                        alarms all beautifully designed.</p>
-                </div>
-                <div class="reminder-grid">
-                    <div class="reminder-card reveal"><div class="icon"><i
-                                class="ph-bold ph-megaphone"></i></div><h4>Voice
-                            Reminder</h4><p>Set reminders with your
-                            voice</p></div>
-                    <div class="reminder-card reveal"><div class="icon"><i
-                                class="ph-bold ph-drop"></i></div><h4>Water
-                            Reminder</h4><p>Stay hydrated with smart
-                            alerts</p></div>
-                    <div class="reminder-card reveal"><div class="icon"><i
-                                class="ph-bold ph-pill"></i></div><h4>Medicine
-                            Reminder</h4><p>Never miss a dose</p></div>
-                    <div class="reminder-card reveal"><div class="icon"><i
-                                class="ph-bold ph-alarm"></i></div><h4>Alarm &
-                            Daily</h4><p>Custom alarms and daily
-                            routines</p></div>
-                    <div class="reminder-card reveal"><div class="icon"><i
-                                class="ph-bold ph-bell"></i></div><h4>Smart
-                            Notification</h4><p>Intelligent, context-aware
-                            alerts</p></div>
-                    <div class="reminder-card reveal"><div class="icon"><i
-                                class="ph-bold ph-clipboard"></i></div><h4>Custom
-                            Reminder</h4><p>Fully customizable for any
-                            need</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Finance ─── -->
-        <section class="section-pad">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span
-                            class="dot"></span>Finance</span>
-                    <h2>Invoice & expense <span class="gradient-text">made
-                            simple</span></h2>
-                    <p>Professional invoicing and expense tracking with
-                        beautiful dashboards and reports.</p>
-                </div>
-                <div class="finance-grid">
-                    <div class="invoice-preview reveal">
-                        <div class="header">
-                            <h3><i class="ph-bold ph-receipt"></i> Invoice
-                                #INV-2026-001</h3>
-                            <span class="badge">Paid</span>
-                        </div>
-                        <div class="row"><span class="label">Client</span><span
-                                class="value">Acme Corp</span></div>
-                        <div class="row"><span class="label">Date</span><span
-                                class="value">June 25, 2026</span></div>
-                        <div class="row"><span class="label">Items</span><span
-                                class="value">Design, Dev, QA</span></div>
-                        <div class="row"><span class="label">GST
-                                (18%)</span><span
-                                class="value">$108.00</span></div>
-                        <div class="total"><span>Total</span><span
-                                class="amount">$708.00</span></div>
-                        <div class="features">
-                            <span><i class="ph-bold ph-file-pdf"></i> PDF
-                                Export</span>
-                            <span><i class="ph-bold ph-qr-code"></i> QR
-                                Payment</span>
-                            <span><i class="ph-bold ph-users"></i> Customer
-                                Mgmt</span>
-                        </div>
-                    </div>
-                    <div class="invoice-preview reveal">
-                        <div class="header">
-                            <h3><i class="ph-bold ph-currency-dollar"></i>
-                                Expense Tracker</h3>
-                            <span class="badge"
-                                style="background:rgba(99,102,241,0.15);color:var(--primary-light);border-color:rgba(99,102,241,0.3);">This
-                                Month</span>
-                        </div>
-                        <div class="finance-stats">
-                            <div class="finance-stat">
-                                <div class="label">Income</div>
-                                <div class="value income">$4,820</div>
-                            </div>
-                            <div class="finance-stat">
-                                <div class="label">Expense</div>
-                                <div class="value expense">$2,340</div>
-                            </div>
-                        </div>
-                        <div class="features">
-                            <span><i class="ph-bold ph-chart-bar"></i>
-                                Charts</span>
-                            <span><i class="ph-bold ph-folder"></i>
-                                Categories</span>
-                            <span><i class="ph-bold ph-file-pdf"></i> PDF
-                                Export</span>
-                            <span><i class="ph-bold ph-file-csv"></i> CSV
-                                Export</span>
-                            <span><i class="ph-bold ph-chart-line"></i> Budget
-                                Planner</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Calculators ─── -->
-        <section class="section-pad" style="background: var(--bg-2);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span
-                            class="dot"></span>Calculators</span>
-                    <h2>Calculate <span
-                            class="gradient-text">everything</span></h2>
-                    <p>From BMI to EMI, GST to SIP all the calculators you need
-                        in one place.</p>
-                </div>
-                <div class="calc-grid">
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-scales icon"></i>BMI</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-cake icon"></i>Age</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-bank icon"></i>EMI</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-percent icon"></i>Percentage</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-tag icon"></i>Discount</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-receipt icon"></i>GST</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-money icon"></i>Loan</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-calendar icon"></i>Date Diff</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-microscope icon"></i>Scientific</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-ruler icon"></i>Unit</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-currency-dollar icon"></i>Currency</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-globe-hemisphere-west icon"></i>Time
-                        Zone</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-hand-coins icon"></i>Tip</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-gas-pump icon"></i>Fuel Cost</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-lightbulb icon"></i>Electricity</div>
-                    <div class="calc-chip reveal"><i
-                            class="ph-bold ph-trend-up icon"></i>SIP</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Other Tools ─── -->
-        <section class="section-pad">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span class="dot"></span>More
-                        Tools</span>
-                    <h2>And <span class="gradient-text">many more…</span></h2>
-                    <p>Every utility you can imagine, packed into one beautiful
-                        app.</p>
-                </div>
-                <div class="other-tools-grid">
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-compass icon"></i>Compass</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-flashlight icon"></i>Flashlight</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-camera icon"></i>QR Scanner</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-image icon"></i>QR Generator</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-barcode icon"></i>Barcode</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-magnifying-glass icon"></i>Magnifier</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-frame-corners icon"></i>Mirror</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-palette icon"></i>Color
-                        Picker</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-file-image icon"></i>OCR</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-speaker-high icon"></i>TTS</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-microphone icon"></i>STT</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-clock icon"></i>Stopwatch</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-timer icon"></i>Timer</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-globe-hemisphere-east icon"></i>World
-                        Clock</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-lock icon"></i>Password</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-note-pencil icon"></i>Notes</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-check-square-offset icon"></i>To-Do</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-calendar-blank icon"></i>Calendar</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-dice icon"></i>Random</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-compress icon"></i>Img
-                        Compress</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-film-strip icon"></i>Video
-                        Compress</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-music-note icon"></i>Audio
-                        Convert</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-archive icon"></i>Zip
-                        Extract</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-archive icon"></i>Zip Create</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-file-image icon"></i>Img to
-                        PDF</div>
-                    <div class="other-tool reveal"><i
-                            class="ph-bold ph-file-pdf icon"></i>PDF to
-                        Img</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Why Toolnic ─── -->
-        <section class="section-pad" id="why" style="background: var(--bg-2);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span class="dot"></span>Why
-                        Toolnic</span>
-                    <h2>One app instead of <span
-                            class="gradient-text">dozens</span></h2>
-                    <p>Beautiful, fast, private, and packed with intelligence.
-                        Here's why Toolnic is different.</p>
-                </div>
-                <div class="why-grid">
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-palette"></i></div><h4>Beautiful
-                            UI</h4><p>Designed with care, every pixel
-                            matters.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-lightning"></i></div><h4>Fast
-                            Performance</h4><p>Optimized for speed and
-                            responsiveness.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-hard-drives"></i></div><h4>Small
-                            App Size</h4><p>Lightweight, doesn't waste your
-                            storage.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-arrows-clockwise"></i></div><h4>Regular
-                            Updates</h4><p>New tools and features added
-                            constantly.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-shield-check"></i></div><h4>Privacy
-                            Focused</h4><p>Your data stays yours.
-                            Always.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-wifi-slash"></i></div><h4>Offline
-                            Tools</h4><p>Many tools work without
-                            internet.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-robot"></i></div><h4>AI
-                            Powered</h4><p>Intelligent features built right
-                            in.</p></div>
-                    <div class="why-item reveal"><div class="icon"><i
-                                class="ph-bold ph-star"></i></div><h4>Premium
-                            Experience</h4><p>Feels like a flagship
-                            product.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Comparison ─── -->
-        <section class="section-pad">
-            <div class="container">
-                <div class="section-header reveal">
-                    <span class="section-label"><span
-                            class="dot"></span>Comparison</span>
-                    <h2>Toolnic vs. <span class="gradient-text">multiple
-                            apps</span></h2>
-                    <p>See how Toolnic stacks up against the fragmented app
-                        ecosystem.</p>
-                </div>
-                <div class="compare-wrapper reveal">
-                    <table class="compare-table">
-                        <thead>
-                            <tr>
-                                <th>Feature</th>
-                                <th class="highlight-col">Toolnic</th>
-                                <th>Multiple Apps</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Storage</td><td class="highlight-col"><span
-                                        class="check">✓</span> Very Low (One
-                                    app)</td><td><span class="cross">✕</span>
-                                    High (10+ apps)</td></tr>
-                            <tr><td>Performance</td><td
-                                    class="highlight-col"><span
-                                        class="check">✓</span> Optimized &
-                                    fast</td><td><span class="cross">✕</span>
-                                    Inconsistent</td></tr>
-                            <tr><td>Features</td><td class="highlight-col"><span
-                                        class="check">✓</span> 50+ in one
-                                    place</td><td><span class="warn">~</span>
-                                    Spread across many</td></tr>
-                            <tr><td>AI</td><td class="highlight-col"><span
-                                        class="check">✓</span>
-                                    Built-in</td><td><span
-                                        class="cross">✕</span> Extra cost or
-                                    missing</td></tr>
-                            <tr><td>Ads</td><td class="highlight-col"><span
-                                        class="check">✓</span>
-                                    Non-intrusive</td><td><span
-                                        class="cross">✕</span> Full-screen
-                                    pop-ups</td></tr>
-                            <tr><td>Offline</td><td class="highlight-col"><span
-                                        class="check">✓</span> Many tools
-                                    offline</td><td><span class="warn">~</span>
-                                    Depends on app</td></tr>
-                            <tr><td>Design</td><td class="highlight-col"><span
-                                        class="check">✓</span> Modern &
-                                    cohesive</td><td><span
-                                        class="cross">✕</span> Outdated &
-                                    inconsistent</td></tr>
-                            <tr><td>Privacy</td><td class="highlight-col"><span
-                                        class="check">✓</span>
-                                    Privacy-first</td><td><span
-                                        class="warn">~</span> Often
-                                    data-hungry</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Testimonials ─── -->
-        <section class="section-pad">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Loved by <span
-                            class="gradient-text">thousands</span></h2>
-                    <p>Real feedback from real users who made the switch to
-                        Toolnic.</p>
-                </div>
-                <div class="testimonial-grid">
-                    <div class="testimonial-card reveal">
-                        <span class="quote-mark">"</span>
-                        <div class="stars">★★★★★</div>
-                        <blockquote>"Toolnic replaced 14 apps on my phone. The AI summarizer alone is worth the download."</blockquote>
-                        <div class="author">
-                            <div class="avatar">JD</div>
-                            <div>
-                                <div class="name">John D.</div>
-                                <div class="handle">@johndev</div>
-                                <span class="verified"><i
-                                        class="ph-bold ph-seal-check"></i>
-                                    Verified</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <span class="quote-mark">"</span>
-                        <div class="stars">★★★★★</div>
-                        <blockquote>"The speed test is incredibly accurate and the UI is just gorgeous. Best utility app on Android."</blockquote>
-                        <div class="author">
-                            <div class="avatar">SM</div>
-                            <div>
-                                <div class="name">Sarah M.</div>
-                                <div class="handle">@sarahm</div>
-                                <span class="verified"><i
-                                        class="ph-bold ph-seal-check"></i>
-                                    Verified</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card reveal">
-                        <span class="quote-mark">"</span>
-                        <div class="stars">★★★★★</div>
-                        <blockquote>"I use it daily for PDFs, reminders, and conversions. It's become an essential part of my workflow."</blockquote>
-                        <div class="author">
-                            <div class="avatar">AR</div>
-                            <div>
-                                <div class="name">Alex R.</div>
-                                <div class="handle">@alexr</div>
-                                <span class="verified"><i
-                                        class="ph-bold ph-seal-check"></i>
-                                    Verified</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── FAQ ─── -->
-        <section class="section-pad" id="faq" style="background: var(--bg-2);">
-            <div class="container">
-                <div class="section-header reveal">
-                    <h2>Frequently asked <span
-                            class="gradient-text">questions</span></h2>
-                    <p>Everything you need to know about Toolnic.</p>
-                </div>
-                <div class="faq-list">
-                    <div class="faq-item reveal"><button class="question">What
-                            is Toolnic?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Toolnic is an all-in-one Android
-                            utility app that combines 50+ powerful tools into a
-                            single, beautifully designed experience. From AI
-                            summarization to PDF editing, speed testing to
-                            invoice creation it's the ultimate digital
-                            toolbox.</div></div>
-                    <div class="faq-item reveal"><button class="question">Is
-                            Toolnic free?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Yes, Toolnic is free to download and
-                            use. We believe powerful tools should be accessible
-                            to everyone. Some advanced AI features may have
-                            usage limits, but the core experience is completely
-                            free.</div></div>
-                    <div class="faq-item reveal"><button class="question">Does
-                            Toolnic work offline?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Many tools work completely offline,
-                            including the compass, flashlight, QR scanner,
-                            calculators, converters, and PDF reader. AI features
-                            and speed tests require an internet
-                            connection.</div></div>
-                    <div class="faq-item reveal"><button class="question">How
-                            does the AI PDF Summarizer work?<span
-                                class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Upload any PDF document to Toolnic,
-                            and our AI engine will analyze the content, extract
-                            key information, and generate a concise summary. It
-                            also supports read-aloud functionality with natural
-                            voices.</div></div>
-                    <div class="faq-item reveal"><button class="question">Is my
-                            data safe with Toolnic?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Absolutely. Toolnic is built with
-                            privacy as a core principle. We don't collect
-                            unnecessary data, and all processing is done
-                            securely. Your documents and personal information
-                            never leave your device without your explicit
-                            consent.</div></div>
-                    <div class="faq-item reveal"><button class="question">Can I
-                            open PDFs from my file manager?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Yes! Toolnic integrates with
-                            Android's file system. Simply tap any PDF in your
-                            file manager and choose Toolnic as the app to open
-                            it. The PDF reader will launch instantly with full
-                            functionality.</div></div>
-                    <div class="faq-item reveal"><button class="question">What
-                            languages does Toolnic support?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Toolnic supports 20+ languages for
-                            the UI, AI summaries, and text-to-speech. The app
-                            automatically detects your device language and
-                            adapts accordingly.</div></div>
-                    <div class="faq-item reveal"><button class="question">How
-                            often is Toolnic updated?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">We release updates every 2-4 weeks
-                            with new tools, improvements, and bug fixes. We're
-                            constantly adding new features based on user
-                            feedback.</div></div>
-                    <div class="faq-item reveal"><button class="question">Does
-                            Toolnic contain ads?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Toolnic is ad-supported but we keep
-                            ads non-intrusive and respectful of your experience.
-                            No full-screen pop-ups or interruptive ads. We
-                            believe in putting the user first.</div></div>
-                    <div class="faq-item reveal"><button class="question">What
-                            permissions does Toolnic need?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Toolnic only asks for permissions it
-                            actually needs storage access for documents, camera
-                            for QR scanning, and microphone for voice reminders.
-                            No unnecessary permissions are
-                            requested.</div></div>
-                    <div class="faq-item reveal"><button class="question">Can I
-                            use Toolnic on tablet?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Yes! Toolnic is fully optimized for
-                            tablets with a responsive layout that adapts to
-                            larger screens. The experience is just as polished
-                            on tablets as on phones.</div></div>
-                    <div class="faq-item reveal"><button class="question">Is
-                            there a dark mode?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Yes, Toolnic features a beautiful
-                            dark mode that's easy on the eyes. It automatically
-                            follows your system theme, or you can toggle it
-                            manually in settings.</div></div>
-                    <div class="faq-item reveal"><button class="question">How do
-                            I contact support?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">You can reach our support team via
-                            email at support@toolnic.app, or through the in-app
-                            feedback system. We typically respond within 24
-                            hours.</div></div>
-                    <div class="faq-item reveal"><button class="question">Is
-                            Toolnic available on iOS?<span class="icon"><i
-                                    class="ph-bold ph-caret-down"></i></span></button><div
-                            class="answer">Currently, Toolnic is available
-                            exclusively on Android. We're exploring an iOS
-                            version for the future.</div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ─── Download CTA ─── -->
-        <section class="section-pad" id="download">
-            <div class="container">
-                <div class="download-section reveal">
-                    <h2>Ready to simplify your digital life?</h2>
-                    <p>Download Toolnic today and experience the power of 50+
-                        tools in one beautiful app.</p>
-                    <div class="download-badges">
-                        <a href="#" class="download-badge">
-                            <span class="icon"><i
-                                    class="ph-bold ph-google-play-logo"></i></span>
-                            <span>
-                                <span class="sub">Get it on</span>
-                                <span class="big">Google Play</span>
-                            </span>
-                        </a>
-                        <a href="#" class="download-badge disabled">
-                            <span class="icon"><i
-                                    class="ph-bold ph-apple-logo"></i></span>
-                            <span>
-                                <span class="sub">Coming soon</span>
-                                <span class="big">App Store</span>
-                            </span>
+                    <div class="social" style="margin-top:15px;">
+                        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+                            <i class="ph-bold ph-linkedin-logo"></i>
                         </a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- ─── Footer ─── -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-inner">
-
-                    <!-- Brand -->
-                    <div>
-                        <a href="#" class="logo">
-                            <div class="logo-mark">
-                                <img src="icon.png" alt="Toolnic">
-                            </div>
-                            <span>Toolnic</span>
-                        </a>
-
-                        <p class="brand-desc">
-                            All-in-One Productivity App for Android.
-                        </p>
-
-                        <p style="margin-top:15px;font-weight:600;">
-                            Developed by Sameer Singh
-                        </p>
-
-                        <div class="social" style="margin-top:15px;">
-                            <a
-                                href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME"
-                                target="_blank">
-                                <i class="ph-bold ph-linkedin-logo"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div>
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                            <li><a href="terms-of-service.html">Terms of Service</a></li>
-                            <li><a href="delete-account.html">Delete Account</a></li>
-                            <li><a href="mailto:tools.toolnic@gmail.com">Support</a></li>
-                        </ul>
-                    </div>
-
+                <!-- Quick Links -->
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/privacy-policy.html">Privacy
+                                Policy</a></li>
+                        <li><a href="/terms.html">Terms of Service</a></li>
+                        <li><a href="/delete-account.html">Delete
+                                Account</a></li>
+                    </ul>
                 </div>
 
-                <div class="footer-bottom">
-                    © 2026 Toolnic. Developed by <strong>Sameer Singh</strong>.
-                    All Rights Reserved.
-                </div>
             </div>
-        </footer>
 
-        <script>
+            <div class="footer-bottom">
+                © 2026 Toolnic. Developed by <strong>Sameer Singh</strong>.
+                All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
         // Navbar scroll
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -3269,7 +3923,7 @@
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     e.preventDefault();
@@ -3291,5 +3945,6 @@
             });
         });
     </script>
-    </body>
+</body>
+
 </html>
